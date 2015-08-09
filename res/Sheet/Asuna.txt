@@ -1,0 +1,11 @@
+<SHEET>
+	<SPRITE Name="Asuna" Sheet="Asuna.png" R="0" G="144" B="168">
+		<ANIMATION Name="WalkingSouth_1" Length="800" Width="607" Height="1001">
+			<FRAME POS_X = "0"  POS_Y = "0"  Width = "26"  Height = "31" />
+		</ANIMATION>
+	</SPRITE>
+	
+	
+	<INSTANCE Sprite="Asuna" Name="character" POS_X="0" POS_Y="0" ROTATION="0" SCALE_X="100" SCALE_Y="100"/>
+</SHEET>
+	
