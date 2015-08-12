@@ -13,7 +13,7 @@ using namespace Engine;
 Game::Game(HINSTANCE hInstance):
 	m_instance (hInstance), dInput (new DirectInput())
 {
-	
+
 }
 
 

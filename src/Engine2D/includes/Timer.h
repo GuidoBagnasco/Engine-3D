@@ -14,9 +14,11 @@ class ENGINE_API Timer{
 	unsigned int m_uiFrameCounter;
 	void FirstMeasure();
 	void Measure();
+	
 public:
 	Timer();
 	friend class Game;
+	friend class Renderer;
 	double GetDT();
 	unsigned int GetFPS();
 };

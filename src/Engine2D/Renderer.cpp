@@ -64,7 +64,7 @@ bool Renderer::InitDX(HWND hWnd){
 		return false;
 	
     m_pkDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
-    //m_pkDevice->SetRenderState(D3DRS_ZENABLE, FALSE);
+    m_pkDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
     m_pkDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
     m_pkDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
     m_pkDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
@@ -72,14 +72,16 @@ bool Renderer::InitDX(HWND hWnd){
     m_pkDevice->SetRenderState(D3DRS_ZENABLE, D3DZB_TRUE);
     m_pkDevice->SetRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
 
-	SetViewPosition(0, 0);
+	SetViewPosition(1, 0, 0);
 	D3DVIEWPORT9 kViewport;
 	hr = m_pkDevice->GetViewport(&kViewport);
 
 	if(hr != D3D_OK)
 		return false;
 
-	D3DXMatrixPerspectiveFovLH(&m_mProjectionMatrix, (float)kViewport.Width, (float)kViewport.Height, 0, 45);
+	//D3DXMatrixPerspectiveFovLH(&m_mProjectionMatrix, (float)kViewport.Width, (float)kViewport.Height, 0, 45);
+	D3DXMatrixPerspectiveFovLH(&m_mProjectionMatrix, D3DX_PI/4, WINDOW_WIDTH / WINDOW_HEIGHT, 0, 1000);
+	//D3DXMatrixLookAtLH
 	//D3DXMatrixOrthoLH(&m_mProjectionMatrix, (float)kViewport.Width, (float)kViewport.Height, -25, 25);		// W, H, Near plane, Far plane
 	hr = m_pkDevice->SetTransform(D3DTS_PROJECTION, &m_mProjectionMatrix);
 	
@@ -160,28 +162,37 @@ void Renderer::SetMatrixMode(MATRIX_MODE mode){
 
 
 
-void Renderer::SetViewPosition(float posX, float posY){
-	D3DXMATRIX kMatrix;
-	D3DXVECTOR3 kLookPos;
-	D3DXVECTOR3 kViewPos;
-
+void Renderer::SetViewPosition(float posX, float posY, float posZ){
 	kLookPos.x = posX;	// (1, 0, 0)
 	kLookPos.y = posY;
-	kLookPos.z = 0.0f;
+	kLookPos.z = posZ;
 
 	kViewPos.x = 0.0f;	
 	kViewPos.y = 0.0f;
-	kViewPos.z = 0.0f;
+	kViewPos.z = -900.0f;
 
 	kViewUp.x = 0.0f;	// (0, 1, 0)
 	kViewUp.y = 1.0f;
 	kViewUp.z = 0.0f;
 
-	D3DXMatrixLookAtLH(&kMatrix, &kViewPos, &kLookPos, &kViewUp);		// Matriz que guarda el resultado, Eye, Look at, Up
-	m_pkDevice->SetTransform(D3DTS_VIEW, &kMatrix);
+	D3DXMatrixLookAtLH(&kViewMatrix, &kViewPos, &kLookPos, &kViewUp);		// Saves the result, Eye, Look at, Up
+	m_pkDevice->SetTransform(D3DTS_VIEW, &kViewMatrix);
+
+	//D3DXMatrixPerspectiveFovLH(&kProjectionMatrix, D3DX_PI / 4, WINDOW_WIDTH / WINDOW_HEIGHT, 0.1f, 1000);
+	//m_pkDevice->SetTransform(D3DTS_PROJECTION, &kProjectionMatrix);
 }
 
 
+void Renderer::UpdateView(D3DXVECTOR3* viewPos, D3DXVECTOR3* lookPos){
+	kViewPos = *viewPos;
+
+	D3DXMatrixLookAtLH(&kViewMatrix, &kViewPos, &kLookPos, &kViewUp);		// Saves the result, Eye, Look at, Up
+	m_pkDevice->SetTransform(D3DTS_VIEW, &kViewMatrix);
+}
+
+
+//---------------------------------------------------------------------------//
+// Matrices
 void Renderer::LoadIdentity(){
 	D3DXMATRIX kTempMatrix;
 
@@ -189,6 +200,7 @@ void Renderer::LoadIdentity(){
 	D3DXMatrixIdentity(&kTempMatrix);
 
 	//If it is a view matrix, uses default values.
+	
 	if(m_eCurrentMatMode == View){
 		D3DXVECTOR3 kEyePos(0, 0, -1);
 		D3DXVECTOR3 kLookPos(0, 0, 0);
@@ -197,7 +209,7 @@ void Renderer::LoadIdentity(){
 		//Generates the view matrix.
 		D3DXMatrixLookAtLH(&kTempMatrix, &kEyePos, &kLookPos, &kUpVector);
 	}
-
+	
 	//Converts from MatrixMode to D3DTRANSFORMSTATETYPE
 	D3DTRANSFORMSTATETYPE eMatMode = static_cast<D3DTRANSFORMSTATETYPE> (m_eCurrentMatMode);
 
@@ -233,4 +245,13 @@ void Renderer::Scale(float h, float w){
 
 	//Sets the matrix.
 	m_pkDevice->MultiplyTransform(eMatMode, &kTempMatrix);
+}
+//---------------------------------------------------------------------------//
+
+
+void Renderer::CameraControl(D3DXVECTOR3* viewPos, D3DXVECTOR3* lookPos){
+	D3DXMATRIX matView;
+
+	D3DXMatrixLookAtLH(&matView, viewPos, lookPos, &kViewUp);
+	m_pkDevice->SetTransform(D3DTS_VIEW, &matView);
 }

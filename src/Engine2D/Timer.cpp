@@ -2,6 +2,9 @@
 using namespace Engine;
 
 
+
+
+
 Timer::Timer(){
 	m_kDeltaTime = 0;
 	m_uiFPS = 0;

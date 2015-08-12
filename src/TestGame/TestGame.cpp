@@ -1,6 +1,7 @@
 #include "TestGame.h"
 #include "Timer.h"
 
+
 TestGame::TestGame(HINSTANCE hInstance) : Game(hInstance){
 	
 }
@@ -21,6 +22,8 @@ bool TestGame::OnStartUp(){
 	Engine::Scene* mainScene = GetScene("MainScene");
 	importer->Load("Asuna.xml", *mainScene);
 
+	camera = new Camera(m_renderer);
+
 	s =  ((Engine::Sprite*)mainScene->GetEntity("character"));
 	s2 = ((Engine::Sprite*)mainScene->GetEntity("character2"));
 
@@ -33,10 +36,33 @@ bool TestGame::OnStartUp(){
 static float fspeed = 0.20f;
 
 bool TestGame::OnLoop(){
+	if (dInput->keyDown(Input::KEY_W) || dInput->keyDown(Input::KEY_UP)){
+		camera->Walk(0.1f);
+	}
+	if (dInput->keyDown(Input::KEY_S) || dInput->keyDown(Input::KEY_DOWN)){
+		camera->Walk(-0.1f);
+	}
+	if (dInput->keyDown(Input::KEY_D) || dInput->keyDown(Input::KEY_RIGHT)){
+		camera->Strafe(-0.1f);
+	}
+	if (dInput->keyDown(Input::KEY_A) || dInput->keyDown(Input::KEY_LEFT)){
+		camera->Strafe(0.1f);
+	}
+	if (dInput->keyDown(Input::KEY_LSHIFT)){
+		camera->Fly(0.1f);
+	}
+	if (dInput->keyDown(Input::KEY_SPACE)){
+		camera->Fly(-0.1f);
+	}
+
+	camera->Yaw(dInput->mouseRelPosY()*0.001f);
+	camera->Pitch(dInput->mouseRelPosX()*0.001f);
+
+	camera->UpdateCamera();
 	//t->Draw(m_renderer);
 	//b->Draw(m_renderer);					// Show
 	//c->Draw(m_renderer);
-	
+	/*
 	if(s2 != NULL){
 		s2->SetAnimation("Idle");
 
@@ -57,8 +83,9 @@ bool TestGame::OnLoop(){
 			s2->SetAnimation("WalkingW");
 		}
 	}
-	
+	*/
 
+	/*
 	if(s != NULL){
 
 		if(dInput->mouseDown(Input::MB_1)){
@@ -68,6 +95,8 @@ bool TestGame::OnLoop(){
 		else{
 			s->SetAnimation("Idle");
 		}
+		*/
+	//-------------- Animation thing that didn't work
 		/*
 		if(dInput->mouseDown(Input::MB_1)){
 			if(dInput->mouseRelPosX() > mouseX){
@@ -99,8 +128,8 @@ bool TestGame::OnLoop(){
 		else{
 			s->SetAnimation("Idle");
 		}
-		*/
-	}
+	// -------------------------------------
+	}*/
 
 	return true;
 }

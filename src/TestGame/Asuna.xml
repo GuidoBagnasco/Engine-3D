@@ -78,8 +78,11 @@
 	<INSTANCE Sprite="Asuna" Name="character3" POS_X="-150" POS_Y="0" ROTATION="0" SCALE_X="100" SCALE_Y="100" LAYER="Character_C"/>
 	<!--
 	<QUAD Name="quad" POS_X="0" POS_Y="0" ROTATION="0" SCALE_X="100" SCALE_Y="200" R="35" G="236" B="254" LAYER="Quad"/>
-	-->
+  <QUAD Name="quad2" POS_X="0" POS_Y="0" ROTATION="0" SCALE_X="100" SCALE_Y="200" R="35" G="236" B="254" LAYER="Quad"/>
+ 
+  -->
 	<!-- 35 236 254-->
 	<TILEMAP name="Map" path="Map.xml" />
+
 </SHEET>
 	

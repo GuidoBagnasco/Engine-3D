@@ -26,7 +26,10 @@ private:
 
 	// Matrices
 	MATRIX_MODE m_eCurrentMatMode;
+	D3DXMATRIX kProjectionMatrix;
+	D3DXMATRIX kViewMatrix;
 	D3DXVECTOR3 kViewPos;
+	D3DXVECTOR3 kLookPos;
 	D3DXVECTOR3 kViewUp;
 public:
 	Renderer(HWND hWnd);
@@ -44,13 +47,16 @@ public:
 	void SetTexture(Texture* texture);
 
 	void SetMatrixMode(MATRIX_MODE mode);
-	void SetViewPosition(float posX, float posY);
+	void SetViewPosition(float posX, float posY, float posZ);
+	void UpdateView(D3DXVECTOR3* viewPos, D3DXVECTOR3* lookPos);
 	void LoadIdentity();
 
 	void CreateImporter();
 
+	void CameraControl(D3DXVECTOR3* viewPos, D3DXVECTOR3* lookPos);
 	void Translate(float fx, float fy);
 	void Scale(float h, float w);
+
 };
 }
 

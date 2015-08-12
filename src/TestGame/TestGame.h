@@ -8,11 +8,14 @@
 #include "Sprite.h"
 #include "Importer.h"
 #include "DirectInput.h"
-#include "Timer.h"
+#include "Camera.h"
 #include "Scene.h"
 using namespace Engine;
 
+class Timer;
+
 class TestGame : public Game{
+
 private:
 	Triangle* t;
 	Box* b;
@@ -20,6 +23,8 @@ private:
 	
 	Sprite* s2;
 	Importer* importer;
+	Camera* camera;
+
 	float mouseX, mouseY;
 
 protected:

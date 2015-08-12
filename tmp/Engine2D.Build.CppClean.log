@@ -1,128 +1,32 @@
-c:\users\guido\documents\image campus\engine2d\tmp\animation.obj
-c:\users\guido\documents\image campus\engine2d\tmp\box.obj
-c:\users\guido\documents\image campus\engine2d\tmp\circle.obj
-c:\users\guido\documents\image campus\engine2d\tmp\directinput.obj
-c:\users\guido\documents\image campus\engine2d\tmp\entity2d.obj
-c:\users\guido\documents\image campus\engine2d\tmp\game.obj
-c:\users\guido\documents\image campus\engine2d\tmp\importer.obj
-c:\users\guido\documents\image campus\engine2d\tmp\input.obj
-c:\users\guido\documents\image campus\engine2d\tmp\mathf.obj
-c:\users\guido\documents\image campus\engine2d\tmp\renderer.obj
-c:\users\guido\documents\image campus\engine2d\tmp\shape.obj
-c:\users\guido\documents\image campus\engine2d\tmp\sprite.obj
-c:\users\guido\documents\image campus\engine2d\tmp\texture.obj
-c:\users\guido\documents\image campus\engine2d\tmp\tilemap.obj
-c:\users\guido\documents\image campus\engine2d\tmp\timer.obj
-c:\users\guido\documents\image campus\engine2d\tmp\tinyxml2.obj
-c:\users\guido\documents\image campus\engine2d\tmp\triangle.obj
-c:\users\guido\documents\image campus\engine2d\tmp\window.obj
-c:\users\guido\documents\image campus\engine2d\tmp\vc110.pdb
-c:\users\guido\documents\image campus\engine2d\tmp\scene.obj
-c:\users\guido\documents\image campus\engine2d\tmp\xmlparser.obj
-c:\users\guido\documents\github\engine-2d\tmp\xmlparser.obj
-c:\users\guido\documents\github\engine-2d\tmp\window.obj
-c:\users\guido\documents\github\engine-2d\tmp\triangle.obj
-c:\users\guido\documents\github\engine-2d\tmp\tinyxml2.obj
-c:\users\guido\documents\github\engine-2d\tmp\timer.obj
-c:\users\guido\documents\github\engine-2d\tmp\tilemap.obj
-c:\users\guido\documents\github\engine-2d\tmp\texture.obj
-c:\users\guido\documents\github\engine-2d\tmp\sprite.obj
-c:\users\guido\documents\github\engine-2d\tmp\shape.obj
-c:\users\guido\documents\github\engine-2d\tmp\scene.obj
-c:\users\guido\documents\github\engine-2d\tmp\renderer.obj
-c:\users\guido\documents\github\engine-2d\tmp\mathf.obj
-c:\users\guido\documents\github\engine-2d\tmp\input.obj
-c:\users\guido\documents\github\engine-2d\tmp\importer.obj
-c:\users\guido\documents\github\engine-2d\tmp\game.obj
-c:\users\guido\documents\github\engine-2d\tmp\entity2d.obj
-c:\users\guido\documents\github\engine-2d\tmp\directinput.obj
-c:\users\guido\documents\github\engine-2d\tmp\circle.obj
-c:\users\guido\documents\github\engine-2d\tmp\box.obj
-c:\users\guido\documents\github\engine-2d\tmp\animation.obj
-c:\users\guido\documents\github\engine-2d\tmp\vc110.pdb
-c:\users\guido\documents\image campus\engine2d\bin\debug\engine2d.lib
-c:\users\guido\documents\image campus\engine2d\bin\debug\engine2d.exp
-c:\users\guido\documents\github\engine-2d\bin\debug\engine2d.lib
-c:\users\guido\documents\github\engine-2d\bin\debug\engine2d.exp
-c:\users\guido\documents\github\engine-2d\bin\release\engine2d.lib
-c:\users\guido\documents\github\engine-2d\bin\release\engine2d.exp
-c:\users\guido\documents\image campus\engine2d\bin\debug\engine2d.ilk
-c:\users\guido\documents\image campus\engine2d\bin\debug\engine2d.dll
-c:\users\guido\documents\image campus\engine2d\bin\debug\engine2d.pdb
-c:\users\guido\documents\github\engine-2d\bin\release\engine2d.dll
-c:\users\guido\documents\github\engine-2d\bin\release\engine2d.pdb
-c:\users\68\downloads\engine-2d-master\tmp\vc120.pdb
-c:\users\68\downloads\engine-2d-master\tmp\xmlparser.obj
-c:\users\68\downloads\engine-2d-master\tmp\window.obj
-c:\users\68\downloads\engine-2d-master\tmp\triangle.obj
-c:\users\68\downloads\engine-2d-master\tmp\tinyxml2.obj
-c:\users\68\downloads\engine-2d-master\tmp\timer.obj
-c:\users\68\downloads\engine-2d-master\tmp\tilemap.obj
-c:\users\68\downloads\engine-2d-master\tmp\texture.obj
-c:\users\68\downloads\engine-2d-master\tmp\sprite.obj
-c:\users\68\downloads\engine-2d-master\tmp\shape.obj
-c:\users\68\downloads\engine-2d-master\tmp\scene.obj
-c:\users\68\downloads\engine-2d-master\tmp\renderer.obj
-c:\users\68\downloads\engine-2d-master\tmp\mathf.obj
-c:\users\68\downloads\engine-2d-master\tmp\input.obj
-c:\users\68\downloads\engine-2d-master\tmp\importer.obj
-c:\users\68\downloads\engine-2d-master\tmp\game.obj
-c:\users\68\downloads\engine-2d-master\tmp\directinput.obj
-c:\users\68\downloads\engine-2d-master\tmp\circle.obj
-c:\users\68\downloads\engine-2d-master\tmp\box.obj
-c:\users\68\downloads\engine-2d-master\tmp\animation.obj
-c:\users\68\downloads\engine-2d-master\tmp\cl.command.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\cl.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\cl.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\engine2d.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2044.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.2336.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4456.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.4712.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.6980.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496-cvtres.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496-cvtres.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496-rc.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496-rc.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.8496.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.command.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.read.3.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.read.4.tlog
-c:\users\68\downloads\engine-2d-master\tmp\link.write.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\vc110.idb
-c:\users\68\downloads\engine-2d-master\tmp\vc110.pdb
-c:\users\68\downloads\engine-2d-master\bin\release\engine2d.pdb
-c:\users\68\downloads\engine-2d-master\tmp\engine2d.tlog\cl.command.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\engine2d.tlog\cl.read.1.tlog
-c:\users\68\downloads\engine-2d-master\tmp\engine2d.tlog\cl.write.1.tlog
+c:\users\826\desktop\engine-3d\tmp\vc120.pdb
+c:\users\826\desktop\engine-3d\tmp\xmlparser.obj
+c:\users\826\desktop\engine-3d\tmp\window.obj
+c:\users\826\desktop\engine-3d\tmp\triangle.obj
+c:\users\826\desktop\engine-3d\tmp\tinyxml2.obj
+c:\users\826\desktop\engine-3d\tmp\timer.obj
+c:\users\826\desktop\engine-3d\tmp\tilemap.obj
+c:\users\826\desktop\engine-3d\tmp\texture.obj
+c:\users\826\desktop\engine-3d\tmp\sprite.obj
+c:\users\826\desktop\engine-3d\tmp\shape.obj
+c:\users\826\desktop\engine-3d\tmp\scene.obj
+c:\users\826\desktop\engine-3d\tmp\renderer.obj
+c:\users\826\desktop\engine-3d\tmp\mathf.obj
+c:\users\826\desktop\engine-3d\tmp\input.obj
+c:\users\826\desktop\engine-3d\tmp\importer.obj
+c:\users\826\desktop\engine-3d\tmp\game.obj
+c:\users\826\desktop\engine-3d\tmp\entity2d.obj
+c:\users\826\desktop\engine-3d\tmp\directinput.obj
+c:\users\826\desktop\engine-3d\tmp\circle.obj
+c:\users\826\desktop\engine-3d\tmp\box.obj
+c:\users\826\desktop\engine-3d\tmp\animation.obj
+c:\users\826\desktop\engine-3d\bin\release\engine2d.lib
+c:\users\826\desktop\engine-3d\bin\release\engine2d.exp
+c:\users\826\desktop\engine-3d\bin\release\engine2d.dll
+c:\users\826\desktop\engine-3d\bin\release\engine2d.pdb
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\cl.command.1.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\cl.read.1.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\cl.write.1.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\engine2d.write.1u.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\link.command.1.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\link.read.1.tlog
+c:\users\826\desktop\engine-3d\tmp\engine2d.tlog\link.write.1.tlog

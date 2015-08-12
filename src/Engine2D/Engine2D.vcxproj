@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="Entity2D.cpp" />
@@ -107,6 +108,7 @@
   <ItemGroup>
     <ClInclude Include="includes\Animation.h" />
     <ClInclude Include="includes\Box.h" />
+    <ClInclude Include="includes\Camera.h" />
     <ClInclude Include="includes\Circle.h" />
     <ClInclude Include="includes\Defines.h" />
     <ClInclude Include="includes\DirectInput.h" />
