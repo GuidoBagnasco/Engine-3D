@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map version="1.0" orientation="orthogonal" width="4" height="6" tilewidth="32" tileheight="32">
+  <tileset firstgid="1" name="untitled tile sheet" tilewidth="32" tileheight="32" spacing="0" margin="0">
+    <image source="Woodland_Tileset.png" />
+  </tileset>
+  <layer name="untitled layer" width="4" height="6">
+    <properties>
+      <property name="@Description" value="" />
+    </properties>
+    <data encoding="xml">
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+      <tile gid="87" />
+    </data>
+  </layer>
+  <layer name="untitled layer2" width="4" height="6">
+    <properties>
+      <property name="@Description" value="" />
+    </properties>
+    <data encoding="xml">
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="208" />
+      <tile gid="37" />
+      <tile gid="208" />
+      <tile gid="208" />
+    </data>
+  </layer>
+</map>

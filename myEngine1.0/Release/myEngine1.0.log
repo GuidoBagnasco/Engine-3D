@@ -1,0 +1,104 @@
+﻿Build started 2015/08/16 10:50:59 p.m..
+     1>Project "C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Scene.cpp
+         Scene.cpp
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(36): warning C4251: 'engine::Scene::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(37): warning C4251: 'engine::Scene::m_mapaEntity' : class 'std::map<std::string,engine::Entity *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Entity *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(38): warning C4251: 'engine::Scene::m_mIteratorEntity' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Entity *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(39): warning C4251: 'engine::Scene::m_mTileMaps' : class 'std::map<std::string,engine::TileMap *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::TileMap *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(40): warning C4251: 'engine::Scene::m_mTileMapsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::TileMap *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(45): warning C4251: 'engine::Scene::m_pClsGroups' : class 'std::map<std::string,engine::Scene::Entity2DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity2DVector *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(46): warning C4251: 'engine::Scene::m_pClsGroupsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity2DVector *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(49): warning C4251: 'engine::Scene::m_pClsGroupsIterA' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity2DVector *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Scene.h(50): warning C4251: 'engine::Scene::m_pClsGroupsIterB' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity2DVector *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Renderer.h(44): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Entity.h(57): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Entity.h(58): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\Sprite.h(18): warning C4251: 'engine::Sprite::m_pkAnimationList' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Sprite'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\TileMap.h(14): warning C4251: 'engine::TileMap::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::TileMap'
+     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\TileMap.h(16): warning C4251: 'engine::TileMap::m_vLayers' : class 'std::vector<std::vector<engine::Tile *,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::TileMap'
+                 with
+                 [
+                     _Ty=engine::Tile *
+                 ]
+     1>Scene.cpp(150): warning C4018: '<' : signed/unsigned mismatch
+     1>Scene.cpp(155): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.dll" /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.lib" /MACHINE:X86 /SAFESEH /DLL Release\animation.obj
+         Release\Camera.obj
+         Release\Engine.obj
+         Release\Entity.obj
+         Release\Game.obj
+         Release\Importer.obj
+         Release\pg1_directinput.obj
+         Release\pg1_input.obj
+         Release\Quad.obj
+         Release\RenderTypes.obj
+         Release\Scene.obj
+         Release\Sprite.obj
+         Release\TielMap.obj
+         Release\pg1_timer.obj
+         Release\tinyxml2.obj
+         Release\VertexBuffer.obj
+         Release\Window.obj
+         Release\Renderer.obj
+         Release\XMLParser.obj
+            Creating library C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.lib and object C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.exp
+         Generating code
+         Finished generating code
+         myEngine1.0.vcxproj -> C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Release\myEngine1.0.dll
+     1>Done Building Project "C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.89
