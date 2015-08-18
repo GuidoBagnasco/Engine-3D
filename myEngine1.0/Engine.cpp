@@ -4,8 +4,8 @@
 #include "Window.h"
 #include "Renderer.h"
 #include "Importer.h"
-#include "input\pg1_directinput.h"
-#include "timer\pg1_timer.h"
+#include "input\DirectInput.h"
+#include "timer\Timer.h"
 #include "Camera.h"
 #include "Game.h"
 

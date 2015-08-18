@@ -1,51 +1,37 @@
-﻿Build started 2015/08/16 11:31:09 p.m..
-     1>Project "C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2015/08/17 08:28:11 p.m..
+     1>Project "C:\Users\Guido\Documents\GitHub\Engine-3D\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Renderer.cpp
-         Renderer.cpp
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\renderer.h(44): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt VertexBuffer.cpp
+         VertexBuffer.cpp
+     1>c:\users\guido\documents\github\engine-3d\myengine1.0\renderer.h(44): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
                  with
                  [
                      _Ty=engine::Texture
                  ]
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\camera.h(15): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
-                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\camera.h(16): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
-                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\camera.h(17): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
-                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\camera.h(18): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
-                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\camera.h(24): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
-                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\renderer.cpp(110): warning C4800: 'DWORD' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\guido\appdata\roaming\skype\my skype received files\myengine\myengine1.0\renderer.cpp(189): warning C4138: '*/' found outside of comment
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.dll" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.lib" /MACHINE:X86 /DLL Debug\animation.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guido\Documents\GitHub\Engine-3D\Debug\myEngine1.0.dll" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Guido\Documents\GitHub\Engine-3D\Debug\myEngine1.0.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guido\Documents\GitHub\Engine-3D\Debug\myEngine1.0.lib" /MACHINE:X86 /DLL Debug\animation.obj
          Debug\Camera.obj
          Debug\Engine.obj
          Debug\Entity.obj
          Debug\Game.obj
          Debug\Importer.obj
          Debug\IndexBuffer.obj
-         Debug\pg1_directinput.obj
-         Debug\pg1_input.obj
+         Debug\DirectInput.obj
+         Debug\Input.obj
          Debug\Quad.obj
          Debug\RenderTypes.obj
          Debug\Scene.obj
          Debug\Sprite.obj
-         Debug\TielMap.obj
-         Debug\pg1_timer.obj
+         Debug\TileMap.obj
+         Debug\Timer.obj
          Debug\tinyxml2.obj
          Debug\VertexBuffer.obj
          Debug\Window.obj
          Debug\Renderer.obj
          Debug\XMLParser.obj
-            Creating library C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.lib and object C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.exp
-     1>Renderer.obj : error LNK2019: unresolved external symbol "public: void __thiscall engine::VertexBuffer::Bind(void)" (?Bind@VertexBuffer@engine@@QAEXXZ) referenced in function "public: void __thiscall engine::Renderer::Draw(struct engine::ColorVertex *,enum engine::Primitive,unsigned int)" (?Draw@Renderer@engine@@QAEXPAUColorVertex@2@W4Primitive@2@I@Z)
-     1>C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\Debug\myEngine1.0.dll : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "C:\Users\Guido\AppData\Roaming\Skype\My Skype Received Files\myEngine\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)) -- FAILED.
+         myEngine1.0.vcxproj -> C:\Users\Guido\Documents\GitHub\Engine-3D\Debug\myEngine1.0.dll
+     1>Done Building Project "C:\Users\Guido\Documents\GitHub\Engine-3D\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.38
+Time Elapsed 00:00:01.24

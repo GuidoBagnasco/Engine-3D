@@ -54,15 +54,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
-    <ClInclude Include="input\pg1_directinput.h">
-      <Filter>Archivos de encabezado\include</Filter>
-    </ClInclude>
-    <ClInclude Include="input\pg1_input.h">
-      <Filter>Archivos de encabezado\include</Filter>
-    </ClInclude>
-    <ClInclude Include="timer\pg1_timer.h">
-      <Filter>Archivos de encabezado\include</Filter>
-    </ClInclude>
     <ClInclude Include="animation.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
@@ -88,6 +79,15 @@
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
     <ClInclude Include="IndexBuffer.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="timer\Timer.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="input\DirectInput.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Input.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,15 +119,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
-    <ClCompile Include="input\pg1_directinput.cpp">
-      <Filter>Archivos de código fuente\src</Filter>
-    </ClCompile>
-    <ClCompile Include="input\pg1_input.cpp">
-      <Filter>Archivos de código fuente\src</Filter>
-    </ClCompile>
-    <ClCompile Include="timer\pg1_timer.cpp">
-      <Filter>Archivos de código fuente\src</Filter>
-    </ClCompile>
     <ClCompile Include="animation.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
@@ -135,9 +126,6 @@
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>Archivos de código fuente\src</Filter>
-    </ClCompile>
-    <ClCompile Include="TielMap.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
     <ClCompile Include="TinyXML\tinyxml2.cpp">
@@ -152,12 +140,24 @@
     <ClCompile Include="IndexBuffer.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
+    <ClCompile Include="timer\Timer.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
+    <ClCompile Include="input\DirectInput.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Input.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="input\pg1_input.inl">
+    <None Include="timer\Timer.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
-    <None Include="timer\pg1_timer.inl">
+    <None Include="input\Input.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
   </ItemGroup>

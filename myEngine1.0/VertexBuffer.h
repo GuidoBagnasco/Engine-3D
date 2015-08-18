@@ -18,6 +18,7 @@ public:
 
 	void Bind();		// TODO: Is this missing??
 	void Draw();
+	int Flush();
 	void SetVertexData(const void* pakVertices, D3DPRIMITIVETYPE ePrimitive, size_t uiVertexCount);
 	
 private:

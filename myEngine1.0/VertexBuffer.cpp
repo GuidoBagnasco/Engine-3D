@@ -28,14 +28,18 @@ m_pkDevice(pkDevice)
 {
 	// nothing to do
 }
+
 //---------------------------------------------------------------------------
+
 VertexBuffer::~VertexBuffer(){
 	if (m_pkVertexBuffer){
 		m_pkVertexBuffer->Release();
 		m_pkVertexBuffer = NULL;
 	}
 }
+
 //---------------------------------------------------------------------------
+
 void VertexBuffer::SetVertexData(const void* pakVertices, D3DPRIMITIVETYPE ePrimitive, size_t uiVertexCount){
 	// release if previously created
 	if(m_pkVertexBuffer){
@@ -62,21 +66,19 @@ void VertexBuffer::SetVertexData(const void* pakVertices, D3DPRIMITIVETYPE ePrim
 
 	hr = m_pkVertexBuffer->Lock(0, 0, (void**)(&pVertices), 0);
 
-	memcpy(pVertices, 
-		   pakVertices, 
-		   uiVertexCount * m_uiVertexSize
-	);
+	memcpy(pVertices, pakVertices, uiVertexCount * m_uiVertexSize);
 
 	hr = m_pkVertexBuffer->Unlock();
 
 	// update internal state
 	m_uiVertexCount = uiVertexCount;
 }
+
 //---------------------------------------------------------------------------
-void VertexBuffer::Draw(){
-	// bind the buffer
+
+void VertexBuffer::Bind(){
 	HRESULT hr;
-	
+
 	hr = m_pkDevice->SetVertexShader(NULL);
 	assert(hr == D3D_OK);
 
@@ -85,32 +87,44 @@ void VertexBuffer::Draw(){
 
 	hr = m_pkDevice->SetStreamSource(0, m_pkVertexBuffer, 0, m_uiVertexSize);
 	assert(hr == D3D_OK);
+}
 
-	// calculate primitive count
-	int iPrimitiveCount = 0;
+//---------------------------------------------------------------------------
 
-	if(m_ePrimitiveType == D3DPT_POINTLIST){
-		iPrimitiveCount = m_uiVertexCount;
-	}
-	else if(m_ePrimitiveType == D3DPT_LINELIST){
-		iPrimitiveCount = m_uiVertexCount / 2;
-	}
-	else if(m_ePrimitiveType == D3DPT_LINESTRIP){
-		iPrimitiveCount = m_uiVertexCount - 1;
-	}
-	else if(m_ePrimitiveType == D3DPT_TRIANGLELIST){
-		iPrimitiveCount = m_uiVertexCount / 3;
-	}
-	else if(m_ePrimitiveType == D3DPT_TRIANGLESTRIP){
-		iPrimitiveCount = m_uiVertexCount - 2;
-	}
-	else if(m_ePrimitiveType == D3DPT_TRIANGLEFAN){
-		iPrimitiveCount = m_uiVertexCount - 2;
-	}
+void VertexBuffer::Draw(){
+	// bind the buffer
+	Bind();
 
 	// render
 	//hr = m_pkDevice->DrawPrimitive(m_ePrimitiveType, 0, iPrimitiveCount);
-	hr = m_pkDevice->DrawIndexedPrimitive(m_ePrimitiveType, 0, 0, m_uiVertexCount, 0, iPrimitiveCount);
-	assert(hr == D3D_OK);
+	HRESULT hr = m_pkDevice->DrawIndexedPrimitive(m_ePrimitiveType, 0, 0, m_uiVertexCount, 0, Flush());
+	//assert(hr == D3D_OK);
 }
+
 //---------------------------------------------------------------------------
+
+int VertexBuffer::Flush(){
+	// calculate primitive count
+	int iPrimitiveCount = 0;
+
+	if (m_ePrimitiveType == D3DPT_POINTLIST){
+		iPrimitiveCount = m_uiVertexCount;
+	}
+	else if (m_ePrimitiveType == D3DPT_LINELIST){
+		iPrimitiveCount = m_uiVertexCount / 2;
+	}
+	else if (m_ePrimitiveType == D3DPT_LINESTRIP){
+		iPrimitiveCount = m_uiVertexCount - 1;
+	}
+	else if (m_ePrimitiveType == D3DPT_TRIANGLELIST){
+		iPrimitiveCount = m_uiVertexCount / 3;
+	}
+	else if (m_ePrimitiveType == D3DPT_TRIANGLESTRIP){
+		iPrimitiveCount = m_uiVertexCount - 2;
+	}
+	else if (m_ePrimitiveType == D3DPT_TRIANGLEFAN){
+		iPrimitiveCount = m_uiVertexCount - 2;
+	}
+
+	return iPrimitiveCount;
+}

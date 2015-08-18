@@ -182,13 +182,11 @@ void Renderer::setTransformMatrix(D3DXMATRIX* kMatrix){
 
 void Renderer::Draw(ColorVertex* /*DIBUJA QUAD*/ v, Primitive p, size_t vC){
 	p_vb->SetVertexData(v, primitiveMap[p], vC);
-	p_vb->Bind();
 	p_vb->Draw();
 }
 
 void Renderer::Draw(TextureVertex*/*DIBUJA LA TEXTURA*/ v, Primitive p, size_t vC){
 	p_vTexture->SetVertexData(v, primitiveMap[p], vC);
-	p_vTexture->Bind();
 	p_vTexture->Draw();
 }
 

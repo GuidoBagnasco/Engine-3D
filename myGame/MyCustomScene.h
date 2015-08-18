@@ -1,7 +1,8 @@
 #include "Scene.h"
-#include "timer\pg1_timer.h"
+#include "timer\Timer.h"
 #include <iostream>
-namespace MiJuego{
+
+namespace MyGame{
 	class MyCustomScene : public engine::Scene{
 	public:
 		MyCustomScene(std::string s) : Scene(s){ }

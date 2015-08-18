@@ -18,18 +18,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Juego.cpp">
+    <ClCompile Include="MyCustomScene.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="MyCustomScene.cpp">
+    <ClCompile Include="MyGame.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Juego.h">
+    <ClInclude Include="MyCustomScene.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MyCustomScene.h">
+    <ClInclude Include="MyGame.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

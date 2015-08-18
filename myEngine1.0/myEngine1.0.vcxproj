@@ -85,8 +85,8 @@
     <ClInclude Include="EMath.h" />
     <ClInclude Include="Importer.h" />
     <ClInclude Include="IndexBuffer.h" />
-    <ClInclude Include="input\pg1_directinput.h" />
-    <ClInclude Include="input\pg1_input.h" />
+    <ClInclude Include="input\DirectInput.h" />
+    <ClInclude Include="input\Input.h" />
     <ClInclude Include="myEngine_API.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="RenderTypes.h" />
@@ -94,7 +94,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileMap.h" />
-    <ClInclude Include="timer\pg1_timer.h" />
+    <ClInclude Include="timer\Timer.h" />
     <ClInclude Include="TinyXML\tinyxml2.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="Window.h" />
@@ -109,14 +109,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Importer.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
-    <ClCompile Include="input\pg1_directinput.cpp" />
-    <ClCompile Include="input\pg1_input.cpp" />
+    <ClCompile Include="input\DirectInput.cpp" />
+    <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="RenderTypes.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="TielMap.cpp" />
-    <ClCompile Include="timer\pg1_timer.cpp" />
+    <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="timer\Timer.cpp" />
     <ClCompile Include="TinyXML\tinyxml2.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -124,8 +124,8 @@
     <ClCompile Include="XMLParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="input\pg1_input.inl" />
-    <None Include="timer\pg1_timer.inl" />
+    <None Include="input\Input.inl" />
+    <None Include="timer\Timer.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

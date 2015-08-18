@@ -1,7 +1,7 @@
 #include "Sprite.h"
 #include "Renderer.h"
 #include "animation.h"
-#include "timer\pg1_timer.h"
+#include "timer\Timer.h"
 #include <d3dx9.h>
 using namespace engine;
 

@@ -32,12 +32,12 @@ namespace engine{
 
 		void SetPosition(float fX, float fY, float fZ);
 		D3DXVECTOR3	GetPosition() { return m_Position; }
-		void MoveForward(float Dist);
-		void MoveRight(float Dist);
-		void MoveUp(float Dist);
+		void Walk(float Dist);
+		void Strafe(float Dist);
+		void Jump(float Dist);
 		void MoveInDirection(float Dist, float fDirectionX, float fDirectionY, float fDirectionZ);
-		void RotateDown(float Angle);
-		void RotateRight(float Angle);
+		void Pitch(float Angle);
+		void Yaw(float Angle);
 		void Roll(float Angle);
 
 	protected:

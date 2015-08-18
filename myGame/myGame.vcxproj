@@ -77,12 +77,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Juego.cpp" />
+    <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyCustomScene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Juego.h" />
+    <ClInclude Include="MyGame.h" />
     <ClInclude Include="MyCustomScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

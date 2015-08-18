@@ -20,63 +20,72 @@ Camera::Camera(Renderer& r)
 	D3DXMatrixIdentity(&m_MatView);
 	m_pkRenderer = &r;
 }
+
 //----------------------------------------------------------------
-Camera::~Camera()
-{
+Camera::~Camera(){
 	instance = NULL;
 }
+
 //----------------------------------------------------------------
-void Camera::SetPosition(float fX, float fY, float fZ)
-{
+
+void Camera::SetPosition(float fX, float fY, float fZ){
 	m_Position = D3DXVECTOR3(fX, fY, fZ);
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::MoveForward(float Dist)
-{
+
+void Camera::Walk(float Dist){
 	m_Position += Dist*m_LookAt;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::MoveRight(float Dist)
-{
+
+void Camera::Strafe(float Dist){
 	m_Position += Dist*m_Right;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::MoveUp(float Dist)
-{
+
+void Camera::Jump(float Dist){
 	m_Position += Dist*m_Up;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::MoveInDirection(float Dist, float fDirectionX, float fDirectionY, float fDirectionZ)
-{
+
+void Camera::MoveInDirection(float Dist, float fDirectionX, float fDirectionY, float fDirectionZ){
 	m_Position += Dist*D3DXVECTOR3(fDirectionX, fDirectionY, fDirectionZ);
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::RotateDown(float Angle)
-{
+
+void Camera::Pitch(float Angle){
 	m_RotateAroundRight = Angle;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::RotateRight(float Angle)
-{
+
+void Camera::Yaw(float Angle){
 	m_RotateAroundUp = Angle;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::Roll(float Angle)
-{
+
+void Camera::Roll(float Angle){
 	m_RotateAroundLookAt += Angle;
 	m_bChanged = true;
 }
+
 //----------------------------------------------------------------
-void Camera::Update()
-{
-	if (m_bChanged) {
+
+void Camera::Update(){
+	if (m_bChanged){
 		//Matrices to store the transformations about our axes
 		D3DXMATRIX MatTotal;
 		D3DXMATRIX MatRotateAroundRight;
@@ -95,9 +104,8 @@ void Camera::Update()
 		D3DXVec3TransformCoord(&m_Up, &m_Up, &MatTotal);
 		D3DXVec3Cross(&m_LookAt, &m_Right, &m_Up);
 		//Check to ensure vectors are perpendicular
-		if (fabs(D3DXVec3Dot(&m_Up, &m_Right)) > 0.01)
-		{
-			//If theyre not
+		if (fabs(D3DXVec3Dot(&m_Up, &m_Right)) > 0.01){
+			//If they're not
 			D3DXVec3Cross(&m_Up, &m_LookAt, &m_Right);
 		}
 		//Normalize our vectors
