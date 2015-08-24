@@ -1,0 +1,118 @@
+//13-08-14
+
+
+engine: librería designada para desarrollar juegos
+a su vez depende de otras librerias (ej: directX)
+
+objetivo: abstraer al usuario un nivel más, limitarle el acceso de librerías.
+
+utilidad: OPEN YOUR FUCKING MIND
+
+engine 2d:
+cosas a tratar:
+manejo y uso de librerías (library)
+
+librería: paquete con funcionalidad listo para implementar y usar
+
+"si ustedes estan haciendo una funcionalidad que ya está implementada en cualquiera de las 3 librerías grandes (?) y quieren rediseñarla, están PERDIENDO TIEMPO Y PLATA"
+
+"hay que perder el miedo a usar librerías gigantezcas, mediante práctica."
+
+"la mejor forma de amigarse es entender desde el punto de vista más basico como funcionan las librerías."
+
+Poco? bust? google it fgt
+
+modos de uso:
+enlace estático: 
+Pros. en el momento en que se esta "build"eando el programa, se le agrega al paquete la funcionalidad de la libreria. No se depende de nada externo, y eso permite cierta libertad. 
+Cons. Si quiero modificar la librería, tengo que re"build"ear el programa. ejecutable es mucho más grande.
+
+enlace dinámico:
+Pros. al momento de "build"ear, lo que se hace es almacenar el lugar donde se tienen que "buscar" las cosas. Y eso se utiliza en el momento en que sea necesario, y no de entrada. (Se puede incluso definir que las librerías no se carguen hasta que se usen).
+Ejecutable más chico, permite librerías de sistema. 
+
+
+
+
+
+
+BEHOLD
+
+
+
+
+Cuando uno esta buildeando un programa, tengo que realizar diferentes pasos.
+(todo lo que empieze con un #, es una sentencia pre procesador (en c, c++, c#, basic, etc))
+0. Preprocesador:
+1. Precompilador: errores basados en includes, defines, (no entiende nada de nada, reemplaza)
+2. Compilador: se hace analisis de sintaxis, de tipo, y nos van a dar los errores necesarios.
+
+
+
+
+EN EL PUNTO DE PRECOMPILACION ES NECESARIO TENER ACCESO A LOS .h (headers). Después se hace el Linkeo (para el cual se van a usar los .lib)
+
+
+armar:
+en una instancia: un dll con funciones simples.
+
+en otra: un programa que haga uso de ese dll.
+
+
+
+debug:debug (in house)
+release:release (realeasable (?))
+
+
+
+PROCESO PARA IMPLEMENTACION EXITOSA DE LIBRERIAS
+1. verificar si librerías son publicas
+
+2. C++ General, Additional include directories, buscar el .h donde las funciones son declaradas.
+
+3. Agregar #include "Zarahaza.h"
+
+4. Linker general, additional library directories, buscar la carpeta (debug) de la librería.
+
+5. Linker input, agregar "nombredelibrería".lib
+
+6. Trasladar el DLL en la carpeta debug (donde está el .lib) a la carpeta debug del proyecto en la que se va a usar.
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+//20-08-14
+
+estructura de proyectos
+
+bin
+ext
+res
+src
+tools
+(tmp)
+Solution.sln
+
+razón por la cual mantener las cosas en Orden: ES UNA LIBRERÍA, Y DEBE RESPONDER A CIERTA ARQUITECTURA PARA FACILITAR EL BUILDEO. 
+
+
+SRC: Source. La carpeta más importante. incluye al proyecto propiamente dicho, todos los cpp's, y adentro una carpeta de include (que incluye .inl y .h)
+
+BIN: Guarda archivos binarios de Debug y Release (DLL). dentro tiene la carpeta debug y release, donde en cada una va lo correspondiente. Motivo? comodidad. De esta forma, se incluye la aplicación que recibe el dll, y no hay necesidad de acomodar o cambiar de lugar dicho dll. (output)
+
+TMP: donde se guardan todos los archivos temporales que Visual Studio genera a la hora de buildear.
+
+
+
+maneras de reacomodar carpetas dentro de VS 2012
+Configuration properties
+general
+	output Directory (bin)
+	intermediate Directory (tmp)
+
+linker
+	output file
+
+(note: add _d en output file name, en debug, para que se note que es una versión de debug)
+
