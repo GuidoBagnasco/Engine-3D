@@ -102,7 +102,7 @@ void Entity::ReturnToPreviousPos(){
 
 	UpdateLocalTransformation();
 }
-
+#include <iostream>
 void Entity::UpdateLocalTransformation(){
 	D3DXMATRIX translateMatrix;
 	D3DXMatrixTranslation(&translateMatrix, _PosX, _PosY, _PosZ);
@@ -117,11 +117,10 @@ void Entity::UpdateLocalTransformation(){
 	D3DXMatrixMultiply(_TrMatrix, &translateMatrix, _TrMatrix);
 	D3DXMatrixMultiply(_TrMatrix, &rotationMatrix, _TrMatrix);
 	D3DXMatrixMultiply(_TrMatrix, &scaleMatrix, _TrMatrix);
-
+	std::cout << _ScaleX << " " << _ScaleY << " " << _ScaleZ << std::endl;
 }
 
 Entity::CollisionResult Entity::CheckCollision(Entity& rkEntity2D) const{
-
 	float fOverlapZ = std::max(0.0f,
 		std::min(PosZ() + fabs(ScaleZ()) / 2.0f, rkEntity2D.PosZ() + fabs(rkEntity2D.ScaleZ()) / 2.0f) -
 		std::max(PosZ() - fabs(ScaleZ()) / 2.0f, rkEntity2D.PosZ() - fabs(rkEntity2D.ScaleZ()) / 2.0f)
@@ -147,7 +146,6 @@ Entity::CollisionResult Entity::CheckCollision(Entity& rkEntity2D) const{
 		}
 	}
 	
-
 	return NoCollision;
 }
 

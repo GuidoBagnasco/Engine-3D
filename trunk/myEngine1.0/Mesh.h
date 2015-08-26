@@ -15,11 +15,16 @@ namespace engine{
 			Mesh(Renderer& rkRenderer, std::vector<ColorVertex> vertices);
 			~Mesh();
 			void Draw() const;
-			void SetData(ColorVertex* Tex_Vertex, size_t vertexCount, engine::Primitive Prim, unsigned short* pInt, size_t indexCount);
+
+			void SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount);
+			void SetData(MeshVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount);
 
 		private:
 			Renderer* m_pkRenderer;
 			ColorVertex* _Vertex;
 			Primitive m_primType;
+		protected:
+			virtual void Init(){	}
+
 	};
 }

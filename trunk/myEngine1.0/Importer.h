@@ -6,6 +6,8 @@
 #include <vector>
 #include "RenderTypes.h"
 #include "XMLParser.h"
+#pragma comment(lib, "../external/assimp/lib/assimp.lib")
+
 
 namespace engine{
 	class Scene;
@@ -13,6 +15,7 @@ namespace engine{
 	class Quad;
 	class Renderer;
 	class Animation;
+	class Importer;
 	class TileMap;
 	class Tile;
 	class Mesh;
@@ -22,16 +25,16 @@ namespace engine{
 			Importer();
 			~Importer();
 			bool Init(Renderer&);
-			bool importScene(Scene&, std::string fileName);
+			bool ImportScene(Scene&, std::string fileName);
 
 			//void importSprite(Scene&, tinyxml2::XMLElement*);
-			void ImportMesh(Scene&, tinyxml2::XMLElement*);
+			void ImportMesh(Mesh& mesh, std::string FileName);
 			//void importQuad(Scene&, tinyxml2::XMLElement*);
 			//void importTileMap(Scene&, const char*);
 			void ImportAnimations(std::vector<Animation*>&, tinyxml2::XMLElement*);
 
-		static Importer* GetInstance() {
-			return m_oInstance;
+		static Importer* GetInstance(){
+			return m_pInstance;
 		}
 
 		Renderer* GetRenderer() const;
@@ -41,8 +44,8 @@ namespace engine{
 			TileMap* LoadTileMap(XMLNode& kTileMapNode);
 			Tile* CreateTile(XMLNode& kTileSetNode, Texture pkTexture, unsigned int iId, int textWidth, int textHeight);
 			int ColorConverter(int);
-			static Importer* m_oInstance;
-				   Renderer* m_oRenderer;
+			static Importer* m_pInstance;
+				   Renderer* m_pRenderer;
 				   std::map<std::string, Texture> m_mTextureMap;
 				   std::map<std::string , TileMap*> m_mTilemaps;
 	};

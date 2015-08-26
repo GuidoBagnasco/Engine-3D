@@ -75,10 +75,13 @@
     <ClInclude Include="Mesh.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
-    <ClInclude Include="pg2_indexbuffer.h">
+    <ClInclude Include="IndexBuffer.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
-    <ClInclude Include="pg2_vertexbuffer.h">
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -131,10 +134,13 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
-    <ClCompile Include="pg2_vertexbuffer.cpp">
+    <ClCompile Include="IndexBuffer.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
-    <ClCompile Include="pg2_indexbuffer.cpp">
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -145,10 +151,10 @@
     <None Include="input\Input.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
-    <None Include="pg2_indexbuffer.inl">
+    <None Include="IndexBuffer.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
-    <None Include="pg2_vertexbuffer.inl">
+    <None Include="VertexBuffer.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
   </ItemGroup>

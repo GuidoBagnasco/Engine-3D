@@ -1,7 +1,7 @@
 #pragma once
 #include "Renderer.h"
-#include "pg2_vertexbuffer.h"
-#include "pg2_indexbuffer.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 #include "Camera.h"
 //#include "Math.h"
 
@@ -188,28 +188,32 @@ void Renderer::Draw(TextureVertex*/*DIBUJA LA TEXTURA*/ v, Primitive p, size_t v
 }
 
 void Renderer::Draw(engine::Primitive p){
-	int ThePrimitive = 0;
-	D3DPRIMITIVETYPE pTipe = primitiveMap[p];
+	int primitive = 0;
 
-	if (pTipe == D3DPT_POINTLIST){
-		ThePrimitive = p_ib->indexCount();
+	if (p < 0 || p > 6)
+		p = Primitive::TriangleList;
+
+	D3DPRIMITIVETYPE pType = primitiveMap[p];
+
+	if(pType == D3DPT_POINTLIST){
+		primitive = p_ib->indexCount();
 	}
-	else if (pTipe == D3DPT_LINELIST){
-		ThePrimitive = p_ib->indexCount() / 2;
+	else if(pType == D3DPT_LINELIST){
+		primitive = p_ib->indexCount() / 2;
 	}
-	else if (pTipe == D3DPT_LINESTRIP){
-		ThePrimitive = p_ib->indexCount() - 1;
+	else if(pType == D3DPT_LINESTRIP){
+		primitive = p_ib->indexCount() - 1;
 	}
-	else if (pTipe == D3DPT_TRIANGLELIST){
-		ThePrimitive = p_ib->indexCount() / 3;
+	else if(pType == D3DPT_TRIANGLELIST){
+		primitive = p_ib->indexCount() / 3;
 	}
-	else if (pTipe == D3DPT_TRIANGLESTRIP){
-		ThePrimitive = p_ib->indexCount() - 2;
+	else if(pType == D3DPT_TRIANGLESTRIP){
+		primitive = p_ib->indexCount() - 2;
 	}
-	else if (pTipe == D3DPT_TRIANGLEFAN){
-		ThePrimitive = p_ib->indexCount() - 2;
+	else if(pType == D3DPT_TRIANGLEFAN){
+		primitive = p_ib->indexCount() - 2;
 	}
-	d3d_dev->DrawIndexedPrimitive(primitiveMap[p], 0, 0, p_vb->vertexCount(), 0, ThePrimitive);
+	d3d_dev->DrawIndexedPrimitive(primitiveMap[p], 0, 0, p_vb->vertexCount(), 0, primitive);
 }
 
 const Texture Renderer::LoadTexture(const std::string& Fname, int KeyCode){

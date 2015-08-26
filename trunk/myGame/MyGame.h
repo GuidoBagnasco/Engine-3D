@@ -7,6 +7,7 @@
 #include "timer\Timer.h"
 #include <iostream>
 #include "Mesh.h"
+#include "Cube.h"
 #include "Camera.h"
 
 namespace MyGame{
@@ -17,6 +18,7 @@ namespace MyGame{
 		void DeInit();
 	private:
 		engine::Camera* mainCamera;
-		engine::Mesh* mesh;
+		engine::Cube* mesh;
+		engine::Mesh* plane;
 	};
 }

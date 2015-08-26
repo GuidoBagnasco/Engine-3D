@@ -1,13 +1,15 @@
+//---------------------------------------------------------------------------
 #include "IndexBuffer.h"
 //---------------------------------------------------------------------------
-#include <cassert>
+#include "Renderer.h"
 //---------------------------------------------------------------------------
 using namespace engine;
 //---------------------------------------------------------------------------
-IndexBuffer::IndexBuffer(IDirect3DDevice9* pkDevice):
+IndexBuffer::IndexBuffer (Renderer& rkRenderer, IDirect3DDevice9* pkDevice):
 m_uiIndexCount(0),
 m_IndexBuffer(NULL),
-m_pkDevice(pkDevice)
+m_pkDevice(pkDevice),
+m_rkRenderer(rkRenderer)
 {
 	// nothing to do
 }
@@ -15,7 +17,8 @@ m_pkDevice(pkDevice)
 //---------------------------------------------------------------------------
 
 IndexBuffer::~IndexBuffer(){
-	if(m_IndexBuffer){
+	if(m_IndexBuffer)
+	{
 		m_IndexBuffer->Release();
 		m_IndexBuffer = NULL;
 	}
@@ -58,6 +61,8 @@ void IndexBuffer::SetIndexData(const unsigned short* pausIndices, size_t uiIndex
 void IndexBuffer::Bind(){
 	HRESULT hr = m_pkDevice->SetIndices(m_IndexBuffer);
 	assert(hr == D3D_OK);
+
+	m_rkRenderer.SetCurrentIndexBuffer(this);
 }
 
 //---------------------------------------------------------------------------

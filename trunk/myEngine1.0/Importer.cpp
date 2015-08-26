@@ -4,28 +4,38 @@
 #include "animation.h"
 #include "Renderer.h"
 
+// ----------------- Assimp ----------------- //
+#include "assimp\include\Importer.hpp"
+#include "assimp\include\scene.h"
+#include "assimp\include\postprocess.h"
+// ------------------------------------------ //
+
 using namespace engine;
 
-Importer* Importer::m_oInstance = NULL;
 
-Importer::Importer() : m_oRenderer(NULL){
+Importer* Importer::m_pInstance = NULL;
+
+Importer::Importer() : m_pRenderer(NULL){
 
 }
 
+//--------------------------------------------------------------------------------//
 
 bool Importer::Init(Renderer& r){
-	m_oRenderer = &r;
-	m_oInstance = this;	// Seteo mi singleton a this!
+	m_pRenderer = &r;
+	m_pInstance = this;	// Seteo mi singleton a this!
 	return true;
 }
 
+//--------------------------------------------------------------------------------//
 
 Renderer* Importer::GetRenderer() const {
-	return m_oRenderer;
+	return m_pRenderer;
 }
 
+//--------------------------------------------------------------------------------//
 
-bool Importer::importScene(Scene& mScene, std::string fileName){
+bool Importer::ImportScene(Scene& mScene, std::string fileName){
 	tinyxml2::XMLDocument xmlDoc;
 	xmlDoc.LoadFile(fileName.c_str());
 	if (xmlDoc.Error())
@@ -37,86 +47,74 @@ bool Importer::importScene(Scene& mScene, std::string fileName){
 	return true;
 }
 
+//--------------------------------------------------------------------------------//
 
+void Importer::ImportMesh(Mesh& mesh, std::string fileName){
+	Assimp::Importer importer;
+	const aiScene* scene = importer.ReadFile(fileName, aiProcess_CalcTangentSpace | aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
+	
+	if(!scene)
+		return;
 
-void Importer::ImportMesh(Scene& mScene, tinyxml2::XMLElement* root){
-	tinyxml2::XMLElement *mesh = root->FirstChildElement("MESH");
-	tinyxml2::XMLElement *instance = root->FirstChildElement("INSTANCE");
+	//mesh = new Mesh(GetRenderer());
 
-	while (mesh != NULL){
-		std::string meshName = mesh->Attribute("name");
-		int vertexCount = mesh->IntAttribute("vertices");
-		//std::string texturePath = mesh->Attribute("texture");
-		
+	int nIndices;
+	unsigned short *pIndices;
 
-		//engine::Texture texture = loadTexture(texturePath, engine_COLOR_RGB(r, g, b));
-
-		instance = root->FirstChildElement("INSTANCE");
-		while (instance != NULL){
-
-			if (instance->Attribute("mesh") == meshName){
-				std::string sName = instance->Attribute("name");
-				float posX = instance->FloatAttribute("posX");
-				float posY = instance->FloatAttribute("posY");
-				float posZ = instance->FloatAttribute("posZ");
-				float rotation = instance->FloatAttribute("rotation");
-				float scaleX = instance->FloatAttribute("scaleX");
-				float scaleY = instance->FloatAttribute("scaleY");
-				float scaleZ = instance->FloatAttribute("scaleZ");
-				std::string colGroup = instance->Attribute("layer");
-
-				
-				tinyxml2::XMLElement *xmlVertex = mesh->FirstChildElement("VERTEX");
-				std::vector<ColorVertex> m_akVertices;
-				while (xmlVertex != NULL){
-					ColorVertex vertex;
-					vertex.x = xmlVertex->FloatAttribute("posX");
-					vertex.y = xmlVertex->FloatAttribute("posY");
-					vertex.z = xmlVertex->FloatAttribute("posZ");
-					vertex.color = engine_COLOR_ARGB(xmlVertex->IntAttribute("r"),
-													xmlVertex->IntAttribute("g"),
-													xmlVertex->IntAttribute("b"),
-													xmlVertex->IntAttribute("a"));
-					
-					m_akVertices.push_back(vertex);
-					xmlVertex = xmlVertex->NextSiblingElement("VERTEX");
+	if(scene->mMeshes[0]){
+		aiMesh * pAIMesh = scene->mMeshes[0];
+		if (pAIMesh->HasFaces()){
+			aiFace* pAIFaces;
+			pAIFaces = pAIMesh->mFaces;
+			nIndices = pAIMesh->mNumFaces * 3;
+			pIndices = new unsigned short[nIndices];
+			for(DWORD i = 0; i < pAIMesh->mNumFaces; i++){
+				if(pAIFaces[i].mNumIndices != 3){
+					delete[] pIndices;
+					return;
 				}
-
-				//----------------------//
-				tinyxml2::XMLElement *xmlTriangle = mesh->FirstChildElement("TRIANGLE");
-				std::vector<Triangle> m_akTriangles;
-				while (xmlTriangle != NULL){
-					Triangle triangle;
-					triangle.a = xmlVertex->IntAttribute("a");
-					triangle.b = xmlVertex->IntAttribute("b");
-					triangle.c = xmlVertex->IntAttribute("c");
-
-					m_akTriangles.push_back(triangle);
-					xmlTriangle = xmlTriangle->NextSiblingElement("TRIANGLE");
+				for(DWORD j = 0; j < 3; j++){
+					pIndices[i * 3 + j] = pAIFaces[i].mIndices[j];
 				}
-				//----------------------//
+			}
+		}
 
-				Mesh* entity = new Mesh(*m_oRenderer, m_akVertices);
+		if (pAIMesh->HasPositions()){
+			int nVertices;
+			MeshVertex * pVertices;
+			nVertices = pAIMesh->mNumVertices;
+			pVertices = new MeshVertex[nVertices];
 
-				entity->SetPos(posX, posY, posZ);
-				entity->SetName(sName);
-				entity->SetRotation(rotation);
-				entity->SetScale(scaleX, scaleY, scaleZ);
-				//entity->setTexture(texture);
-				entity->SetCollisionGroup(colGroup);
-
-				mScene.Add(sName, entity);
-				mScene.AddClsGroup(colGroup);
-				mScene.AddEntityToClsGroup(entity, colGroup);
+			for(DWORD i = 0; i < nVertices; i++){
+				pVertices[i].x = pAIMesh->mVertices[i].x;
+				pVertices[i].y = pAIMesh->mVertices[i].y;
+				pVertices[i].z = pAIMesh->mVertices[i].z;
 			}
 
-			instance = instance->NextSiblingElement("INSTANCE");
+			if(pAIMesh->HasNormals()){
+				for(DWORD i = 0; i < nVertices; i++){
+					pVertices[i].nx = pAIMesh->mNormals[i].x;
+					pVertices[i].ny = pAIMesh->mNormals[i].y;
+					pVertices[i].nz = pAIMesh->mNormals[i].z;
+				}
+			}
+
+			if(pAIMesh->HasTextureCoords(0)){
+				for(DWORD i = 0; i < nVertices; i++){
+					pVertices[i].u = pAIMesh->mTextureCoords[0][i].x;
+					pVertices[i].v = pAIMesh->mTextureCoords[0][i].y;
+				}
+			}
+
+			mesh.SetData(pVertices, nVertices, Primitive::TriangleList, pIndices, nIndices);
+			mesh.SetName(pAIMesh->mName.C_Str());
 		}
-		mesh = mesh->NextSiblingElement("MESH");
 	}
 
+	return;
 }
 
+//--------------------------------------------------------------------------------//
 
 void Importer::ImportAnimations(std::vector<Animation*>& list, tinyxml2::XMLElement* animations){
 	while (animations != NULL)
@@ -152,10 +150,12 @@ void Importer::ImportAnimations(std::vector<Animation*>& list, tinyxml2::XMLElem
 	}
 }
 
+//--------------------------------------------------------------------------------//
+
 Texture Importer::LoadTexture(std::string path, int KeyCode){
 
 	if (!m_mTextureMap.count(path)){
-		Texture t = m_oRenderer->LoadTexture(path, KeyCode);
+		Texture t = m_pRenderer->LoadTexture(path, KeyCode);
 		m_mTextureMap[path] = t;
 		return t;
 	}
@@ -163,7 +163,7 @@ Texture Importer::LoadTexture(std::string path, int KeyCode){
 	return m_mTextureMap[path];
 }
 
-//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------//
 
 Texture Importer::LoadTexture(XMLNode& kTextureNode, const char* textureName){
         // se fija si existe, si existe lo retorna, si no lo crea.
@@ -178,11 +178,12 @@ Texture Importer::LoadTexture(XMLNode& kTextureNode, const char* textureName){
 		if(kTextureNode.isAttributeSet("trans") != 0)
 			keycode = ColorConverter(atoi(kTextureNode.getAttribute("trans")));
 
-		Texture text = m_oRenderer->LoadTexture(sFilePath, keycode);
+		Texture text = m_pRenderer->LoadTexture(sFilePath, keycode);
 		m_mTextureMap[textureName] = text;
         return text;
 }
 
+//--------------------------------------------------------------------------------//
 
 int Importer::ColorConverter(int hexValue) {
   int r = ((hexValue >> 16) & 0xFF) / 255.0;  // Extract the RR byte

@@ -1,7 +1,7 @@
 #include "Mesh.h"
 #include "Renderer.h"
-#include "pg2_vertexbuffer.h"
-#include "pg2_indexbuffer.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 #include "RenderTypes.h"
 using namespace engine;
 
@@ -13,7 +13,6 @@ Mesh::Mesh(Renderer& rkRenderer) : Entity(){
 	p_vb = rkRenderer.CreateVertexBuffer(sizeof(ColorVertex), ColorVertexType);
 	p_ib = rkRenderer.CreateIndexBuffer();
 }
-
 
 
 
@@ -38,16 +37,23 @@ Mesh::~Mesh(){
 }
 
 
-void Mesh::SetData(ColorVertex* Tex_Vertex, size_t vertexCount, engine::Primitive Prim, unsigned short* pInt, size_t indexCount){
+void Mesh::SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount){
 	m_primType = Prim;
-	p_vb->setVertexData((void *)Tex_Vertex, vertexCount);
-	p_ib->setIndexData(pInt, indexCount);
+	p_vb->SetVertexData((void *)Tex_Vertex, vertexCount);
+	p_ib->SetIndexData(pInt, indexCount);
+}
+
+
+void Mesh::SetData(MeshVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount){
+	m_primType = Prim;
+	p_vb->SetVertexData((void *)Tex_Vertex, vertexCount);
+	p_ib->SetIndexData(pInt, indexCount);
 }
 
 
 void Mesh::Draw() const{
-	p_vb->bind();
-	p_ib->bind();
+	p_vb->Bind();
+	p_ib->Bind();
 
 	m_pkRenderer->SetCurrentTexture(engine::NoTexture);
 	m_pkRenderer->SetMatrix(World, _TrMatrix);

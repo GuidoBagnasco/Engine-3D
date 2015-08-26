@@ -16,9 +16,15 @@ namespace engine{
 		float x, y, z;
 		float u, v;
 	};
-
+	/*
 	struct MYENGINE_API Triangle{
 		int a, b, c;
+	};
+	*/
+	struct MYENGINE_API	MeshVertex{
+		float x, y, z;
+		float nx, ny, nz;
+		float u, v;
 	};
 
 	extern const DWORD TextureVertexType;
