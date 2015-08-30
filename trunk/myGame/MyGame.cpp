@@ -6,7 +6,7 @@
 #include <iostream>
 
 using namespace MyGame;
-float mSpeed = 0.1f;
+float mSpeed = 0.3f;
 
 
 bool Game::Init(engine::Renderer& r){
@@ -23,18 +23,20 @@ bool Game::Init(engine::Renderer& r){
 
 	importer->ImportScene(*scene1, "scene1.xml");
 
-	plane = new engine::Mesh(*importer->GetInstance()->GetRenderer());
+	plane = new engine::Mesh(r, true);
 	importer->ImportMesh(*plane, "Mesh.obj");
-	plane->SetPos(0.0f, 0.0f, 0.0f);
-	plane->SetScale(10.0f,10.0f, 10.0f);
 	
+	plane->SetScale(1.0f,1.0f, 1.0f);
+	plane->SetPos(50.0f, -30.0f, 0.0f);
+
+
 	mesh = new engine::Cube(r);
 
 	mesh->SetScale(100, 100, 100);
 
 
 
-	r.SetBackgroundColor(31, 67, 243);
+	r.SetBackgroundColor(0, 0, 0);
 
 	//
 	return true;
@@ -61,9 +63,9 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		mainCamera->Strafe(mSpeed * timer.timeBetweenFrames());
 	}
 
-	mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 100 * timer.timeBetweenFrames());
+	//mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 100 * timer.timeBetweenFrames());
 
-	mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 100 * timer.timeBetweenFrames());
+	//mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 100 * timer.timeBetweenFrames());
 
 	if(dInput.keyDown(engine::Input::KEY_SPACE)){
 		mainCamera->Jump(mSpeed * timer.timeBetweenFrames());
@@ -83,6 +85,7 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 
 	if(mesh != NULL)
 		mesh->Draw();
+		
 
 	if(plane != NULL)
 		plane->Draw();
