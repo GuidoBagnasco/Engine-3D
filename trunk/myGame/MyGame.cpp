@@ -24,9 +24,9 @@ bool Game::Init(engine::Renderer& r){
 	importer->ImportScene(*scene1, "scene1.xml");
 
 	plane = new engine::Mesh(*importer->GetInstance()->GetRenderer());
-	importer->ImportMesh(*plane, "Porsche_911_GT2.max");
-	plane->SetPos(5.0f, 0.0f, 0.0f);
-	plane->SetScale(1.0f, 1.0f, 1.0f);
+	importer->ImportMesh(*plane, "Mesh.obj");
+	plane->SetPos(0.0f, 0.0f, 0.0f);
+	plane->SetScale(10.0f,10.0f, 10.0f);
 	
 	mesh = new engine::Cube(r);
 
@@ -94,6 +94,5 @@ void Game::DeInit(){
 	if(mesh){
 		delete mesh;
 		mesh = NULL;
-	}
-		
+	}	
 }

@@ -56,58 +56,59 @@ void Importer::ImportMesh(Mesh& mesh, std::string fileName){
 	if(!scene)
 		return;
 
-	//mesh = new Mesh(GetRenderer());
+	//mesh = new Mesh(&m_pRenderer->GetRenderer());
 
 	int nIndices;
 	unsigned short *pIndices;
 
 	if(scene->mMeshes[0]){
-		aiMesh * pAIMesh = scene->mMeshes[0];
-		if (pAIMesh->HasFaces()){
+		aiMesh * p_AIMesh = scene->mMeshes[0];
+		if(p_AIMesh->HasFaces()){
 			aiFace* pAIFaces;
-			pAIFaces = pAIMesh->mFaces;
-			nIndices = pAIMesh->mNumFaces * 3;
+			pAIFaces = p_AIMesh->mFaces;
+			nIndices = p_AIMesh->mNumFaces * 3;
 			pIndices = new unsigned short[nIndices];
-			for(DWORD i = 0; i < pAIMesh->mNumFaces; i++){
+			for(DWORD i = 0; i < p_AIMesh->mNumFaces; i++){
 				if(pAIFaces[i].mNumIndices != 3){
 					delete[] pIndices;
 					return;
 				}
+
 				for(DWORD j = 0; j < 3; j++){
 					pIndices[i * 3 + j] = pAIFaces[i].mIndices[j];
 				}
 			}
 		}
 
-		if (pAIMesh->HasPositions()){
+		if(p_AIMesh->HasPositions()){
 			int nVertices;
 			MeshVertex * pVertices;
-			nVertices = pAIMesh->mNumVertices;
+			nVertices = p_AIMesh->mNumVertices;
 			pVertices = new MeshVertex[nVertices];
 
 			for(DWORD i = 0; i < nVertices; i++){
-				pVertices[i].x = pAIMesh->mVertices[i].x;
-				pVertices[i].y = pAIMesh->mVertices[i].y;
-				pVertices[i].z = pAIMesh->mVertices[i].z;
+				pVertices[i].x = p_AIMesh->mVertices[i].x;
+				pVertices[i].y = p_AIMesh->mVertices[i].y;
+				pVertices[i].z = p_AIMesh->mVertices[i].z;
 			}
 
-			if(pAIMesh->HasNormals()){
+			if(p_AIMesh->HasNormals()){
 				for(DWORD i = 0; i < nVertices; i++){
-					pVertices[i].nx = pAIMesh->mNormals[i].x;
-					pVertices[i].ny = pAIMesh->mNormals[i].y;
-					pVertices[i].nz = pAIMesh->mNormals[i].z;
+					pVertices[i].nx = p_AIMesh->mNormals[i].x;
+					pVertices[i].ny = p_AIMesh->mNormals[i].y;
+					pVertices[i].nz = p_AIMesh->mNormals[i].z;
 				}
 			}
 
-			if(pAIMesh->HasTextureCoords(0)){
+			if(p_AIMesh->HasTextureCoords(0)){
 				for(DWORD i = 0; i < nVertices; i++){
-					pVertices[i].u = pAIMesh->mTextureCoords[0][i].x;
-					pVertices[i].v = pAIMesh->mTextureCoords[0][i].y;
+					pVertices[i].u = p_AIMesh->mTextureCoords[0][i].x;
+					pVertices[i].v = p_AIMesh->mTextureCoords[0][i].y;
 				}
 			}
 
 			mesh.SetData(pVertices, nVertices, Primitive::TriangleList, pIndices, nIndices);
-			mesh.SetName(pAIMesh->mName.C_Str());
+			mesh.SetName(p_AIMesh->mName.C_Str());
 		}
 	}
 
@@ -117,8 +118,7 @@ void Importer::ImportMesh(Mesh& mesh, std::string fileName){
 //--------------------------------------------------------------------------------//
 
 void Importer::ImportAnimations(std::vector<Animation*>& list, tinyxml2::XMLElement* animations){
-	while (animations != NULL)
-	{
+	while (animations != NULL){
 		//CREATE ANIMATION AUX
 		Animation *anim = new Animation();
 
@@ -153,7 +153,6 @@ void Importer::ImportAnimations(std::vector<Animation*>& list, tinyxml2::XMLElem
 //--------------------------------------------------------------------------------//
 
 Texture Importer::LoadTexture(std::string path, int KeyCode){
-
 	if (!m_mTextureMap.count(path)){
 		Texture t = m_pRenderer->LoadTexture(path, KeyCode);
 		m_mTextureMap[path] = t;

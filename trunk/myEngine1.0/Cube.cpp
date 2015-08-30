@@ -5,7 +5,7 @@ Cube::Cube(Renderer& rkRenderer) : Mesh(rkRenderer){
 	Init();
 }
 
-void Cube::Init(){
+void Cube::Init(){/*
 	ColorVertex g_8Vertices[] = {
 		{ -0.5f, 0.5f, -0.5f, D3DCOLOR_XRGB(255, 0, 0) }, // 0 
 		{ 0.5f, 0.5f, -0.5f, D3DCOLOR_XRGB(0, 255, 0) }, // 1 
@@ -25,5 +25,5 @@ void Cube::Init(){
 		1, 7, 6, 1, 0, 7,
 		0, 3, 4, 0, 4, 7 };
 
-	SetData(g_8Vertices, 8, TriangleList, g_indices, 36);
+	SetData(g_8Vertices, 8, TriangleList, g_indices, 36);*/
 }

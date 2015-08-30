@@ -1,17 +1,78 @@
-﻿Build started 2015/08/25 11:38:18 p.m..
-     1>Project "C:\Users\Guido\Desktop\Engine-3D-master\trunk\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
+﻿Build started 26/08/2015 10:56:32 a.m..
+     1>Project "C:\Users\826\Desktop\Engine-3D\trunk\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Guido\Desktop\Engine-3D-master\trunk\external" /ZI /nologo /W3 /WX- /Od /Oy- /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Entity.cpp
-         Entity.cpp
-     1>c:\users\guido\desktop\engine-3d-master\trunk\myengine1.0\entity.h(59): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
-     1>c:\users\guido\desktop\engine-3d-master\trunk\myengine1.0\entity.h(60): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
-     1>c:\users\guido\desktop\engine-3d-master\trunk\myengine1.0\renderer.h(53): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\826\Desktop\Engine-3D\trunk\external" /ZI /nologo /W3 /WX- /Od /Oy- /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Importer.cpp
+         Importer.cpp
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.h(49): warning C4251: 'engine::Importer::m_mTextureMap' : class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Texture
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.h(50): warning C4251: 'engine::Importer::m_mTilemaps' : class 'std::map<std::string,engine::TileMap *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::TileMap *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(34): warning C4251: 'engine::Scene::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(35): warning C4251: 'engine::Scene::m_mapEntity' : class 'std::map<std::string,engine::Entity *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Entity *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(36): warning C4251: 'engine::Scene::m_mIteratorEntity' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Entity *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(41): warning C4251: 'engine::Scene::m_pClsGroups' : class 'std::map<std::string,engine::Scene::Entity3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity3DVector *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(42): warning C4251: 'engine::Scene::m_pClsGroupsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity3DVector *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(45): warning C4251: 'engine::Scene::m_pClsGroupsIterA' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity3DVector *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\scene.h(46): warning C4251: 'engine::Scene::m_pClsGroupsIterB' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Entity3DVector *
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\entity.h(59): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\entity.h(60): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\animation.h(25): warning C4251: 'engine::Animation::m_akFrames' : class 'std::vector<engine::Animation::Frame,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+                 with
+                 [
+                     _Ty=engine::Animation::Frame
+                 ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\animation.h(35): warning C4251: 'engine::Animation::_Name' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\renderer.h(53): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
                  with
                  [
                      _Ty=engine::Texture
                  ]
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(104): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(188): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(189): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\826\desktop\engine-3d\trunk\myengine1.0\importer.cpp(190): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guido\Desktop\Engine-3D-master\trunk\Debug\MyEngine1.0.dll" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Guido\Desktop\Engine-3D-master\trunk\Debug\MyEngine1.0.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guido\Desktop\Engine-3D-master\trunk\Debug\MyEngine1.0.lib" /MACHINE:X86 /DLL Debug\animation.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\826\Desktop\Engine-3D\trunk\Debug\MyEngine1.0.dll" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\826\Desktop\Engine-3D\trunk\Debug\MyEngine1.0.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\826\Desktop\Engine-3D\trunk\Debug\MyEngine1.0.lib" /MACHINE:X86 /DLL Debug\animation.obj
          Debug\Camera.obj
          Debug\Cube.obj
          Debug\Engine.obj
@@ -30,9 +91,9 @@
          Debug\Window.obj
          Debug\Renderer.obj
          Debug\XMLParser.obj
-         myEngine1.0.vcxproj -> C:\Users\Guido\Desktop\Engine-3D-master\trunk\Debug\MyEngine1.0.dll
-     1>Done Building Project "C:\Users\Guido\Desktop\Engine-3D-master\trunk\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)).
+         myEngine1.0.vcxproj -> C:\Users\826\Desktop\Engine-3D\trunk\Debug\MyEngine1.0.dll
+     1>Done Building Project "C:\Users\826\Desktop\Engine-3D\trunk\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.49
+Time Elapsed 00:00:01.10

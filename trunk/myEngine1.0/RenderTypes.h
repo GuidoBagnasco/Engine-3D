@@ -16,18 +16,16 @@ namespace engine{
 		float x, y, z;
 		float u, v;
 	};
-	/*
-	struct MYENGINE_API Triangle{
-		int a, b, c;
-	};
-	*/
-	struct MYENGINE_API	MeshVertex{
-		float x, y, z;
-		float nx, ny, nz;
-		float u, v;
-	};
 
 	extern const DWORD TextureVertexType;
+
+	struct MYENGINE_API	MeshVertex{
+		float x,y,z;
+		float nx,ny,nz;
+		float u,v;
+	};
+
+	extern const DWORD MeshVertexType;
 
 	typedef IDirect3DTexture9* Texture;
 	static const Texture NoTexture = NULL;
@@ -48,11 +46,8 @@ namespace engine{
 		World,
 		MatrixTypeCount
 	};
-
 #define engine_COLOR_ARGB(a,r,g,b)  ((DWORD)((((a)&0xff)<<24)|(((r)&0xff)<<16)|(((g)&0xff)<<8)|((b)&0xff)))
 #define engine_COLOR_RGB(r,g,b) engine_COLOR_ARGB(0xff,r,g,b)
 #define engine_COLOR_WHITE engine_COLOR_RGB(255,255,255)
 #define engine_COLOR_RED engine_COLOR_RGB(255,0,0)
-
-
 }

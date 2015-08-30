@@ -30,8 +30,8 @@ namespace engine{
 
 		void ReturnToPreviousPos();
 
-		virtual void Draw() const = 0;
-		virtual void Update(Timer&) { }
+		virtual void Draw() = 0;
+		virtual void Update(Timer&){ }
 
 		enum CollisionResult{
 			CollisionVertical,

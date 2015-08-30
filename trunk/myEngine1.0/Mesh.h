@@ -1,30 +1,34 @@
 #pragma once
 #include "myEngine_API.h"
+#include "RenderTypes.h"
 #include "Entity.h"
-#include "Renderer.h"
-#include <d3d9.h>
+#include <string>
 #include <vector>
 
+
 namespace engine{
-
 	class Renderer;
-	
+	class IndexBuffer;
+	class VertexBuffer;
+
 	class MYENGINE_API Mesh : public Entity{
-		public:
-			Mesh(Renderer& rkRenderer);
-			Mesh(Renderer& rkRenderer, std::vector<ColorVertex> vertices);
-			~Mesh();
-			void Draw() const;
 
-			void SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount);
-			void SetData(MeshVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount);
+	public:
+		Mesh(Renderer& r, bool isTextured = false);
+		~Mesh();
 
-		private:
-			Renderer* m_pkRenderer;
-			ColorVertex* _Vertex;
-			Primitive m_primType;
-		protected:
-			virtual void Init(){	}
+		void SetData(ColorVertex* , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
+		void SetData(MeshVertex*  , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
 
+	public:
+		void Draw(Renderer& r) const {  }
+		void Draw();
+
+	private:
+		IndexBuffer* m_pIndexBuffer;
+		VertexBuffer* m_pVertexBuffer;
+		Primitive m_Primitive;
+		Renderer& m_rRenderer;
+		Texture m_pTexture;
 	};
 }
