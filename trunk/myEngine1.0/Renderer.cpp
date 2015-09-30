@@ -3,7 +3,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "Camera.h"
-//#include "Math.h"
+
 
 
 using namespace engine;
@@ -19,7 +19,6 @@ p_ib(NULL)
 
 Renderer::~Renderer(){
 
-	Camera* c = Camera::Main();
 	if (c){
 		delete c;
 		c = NULL;
@@ -54,18 +53,25 @@ bool Renderer::Init(HWND _HwnD){
 	d3d = Direct3DCreate9(D3D_SDK_VERSION);
 	D3DPRESENT_PARAMETERS d3dpp;
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
-	d3dpp.Windowed = TRUE;
+	d3dpp.Windowed = true;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	d3dpp.hDeviceWindow = _HwnD;
+	d3dpp.EnableAutoDepthStencil = TRUE;
+	d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
+	d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;
 
 	if(d3d->CreateDevice( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, _HwnD, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dpp, &d3d_dev) == D3D_OK){
-		d3d_dev->SetRenderState(D3DRS_LIGHTING,FALSE);
-		d3d_dev->SetRenderState(D3DRS_CULLMODE,D3DCULL_CW);
 
-		d3d_dev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-		d3d_dev->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
-		d3d_dev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+		d3d_dev->SetRenderState(D3DRS_LIGHTING, FALSE); // Cambiar a TRUE para habilitar la luz.
+		d3d_dev->SetRenderState(D3DRS_ZENABLE, TRUE);
+
 		d3d_dev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+		d3d_dev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+		d3d_dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+		d3d_dev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+		d3d_dev->SetRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
+		d3d_dev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+
 		
 		D3DVIEWPORT9 kViewport; //CAMARA 
 		d3d_dev->GetViewport(&kViewport);
@@ -74,7 +80,7 @@ bool Renderer::Init(HWND _HwnD){
 		float fViewPortHeight = static_cast<float>(kViewport.Height);
 
 		D3DXMATRIX projectionMatrix;  //MATRIX PROYEC...
-		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 0.01f, 1000.0f);
+		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 1.0f, 3000.0f);
 		//D3DXMatrixOrthoLH(&projectionMatrix,fViewPortWidth,fViewPortHeight, -1.0f, 1.0f);
 		d3d_dev->SetTransform(D3DTS_PROJECTION, &projectionMatrix);
 
@@ -92,7 +98,6 @@ bool Renderer::Init(HWND _HwnD){
 		d3d_dev->SetTransform(D3DTS_WORLD, &worldMatrix);
 
 		// Creo mi camara...
-		Camera * c = Camera::Main();
 		c = new Camera(*this);
 		
 		return true;
@@ -115,7 +120,7 @@ void Renderer::SwitchLightning(){
 }
 
 void Renderer::BeginFrame(){
-	d3d_dev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(r,g,b), 1.0f, 0);
+	d3d_dev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(r, g, b), 1.0f, 0);
 	d3d_dev->BeginScene();
 }
 
@@ -166,7 +171,7 @@ void Renderer::LoadIdentity(){
 	D3DXVECTOR3 kUpVector(0, 1, 0);
 
 	// generate the view matrix
-	D3DXMatrixLookAtLH(&kTempMatrix, &kEyePos, &kLookPos, &kUpVector);
+	//D3DXMatrixLookAtLH(&kTempMatrix, &kEyePos, &kLookPos, &kUpVector);
 
 	// set the matrix
 	d3d_dev->SetTransform(D3DTS_VIEW, &kTempMatrix);

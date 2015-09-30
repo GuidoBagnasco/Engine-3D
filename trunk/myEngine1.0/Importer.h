@@ -8,6 +8,14 @@
 #include "XMLParser.h"
 #pragma comment(lib, "../external/assimp/lib/assimp.lib")
 
+// Estructuras de ayuda de Assimp
+struct aiNode;
+struct aiMesh;
+struct aiMaterial;
+struct aiScene;
+struct aiAnimation;
+// - Fin Estructuras de Ayuda de Assimp
+
 
 namespace engine{
 	class Scene;
@@ -19,6 +27,7 @@ namespace engine{
 	class TileMap;
 	class Tile;
 	class Mesh;
+	class Node;
 
 	class MYENGINE_API Importer{
 		public:
@@ -27,23 +36,27 @@ namespace engine{
 			bool Init(Renderer&);
 			bool ImportScene(Scene&, std::string fileName);
 
-			//void importSprite(Scene&, tinyxml2::XMLElement*);
+			bool importNode(Node& kNode, aiNode* AiNode, const aiScene* AiScene);
+			bool importMesh(const aiMesh* AiMesh, const aiMaterial* AiMaterial, Mesh& kMesh);
+			bool importScene(const std::string& FileName, Node& theNode);
+
+
 			void ImportMesh(Mesh& mesh, std::string FileName);
-			//void importQuad(Scene&, tinyxml2::XMLElement*);
-			//void importTileMap(Scene&, const char*);
 			void ImportAnimations(std::vector<Animation*>&, tinyxml2::XMLElement*);
 
-		static Importer* GetInstance(){
-			return m_pInstance;
-		}
+			static Importer* GetInstance(){
+				return m_pInstance;
+			}
 
-		Renderer* GetRenderer() const;
-		Texture LoadTexture(std::string path, int KeyCode);
-		Texture LoadTexture(XMLNode& kTextureNode, const char* textureName);
+			Renderer* GetRenderer() const;
+			Texture LoadTexture(std::string path, int KeyCode);
+			Texture LoadTexture(XMLNode& kTextureNode, const char* textureName);
+
 		private:
 			TileMap* LoadTileMap(XMLNode& kTileMapNode);
 			Tile* CreateTile(XMLNode& kTileSetNode, Texture pkTexture, unsigned int iId, int textWidth, int textHeight);
 			int ColorConverter(int);
+			std::string m_sCurrentModelPath;
 			static Importer* m_pInstance;
 				   Renderer* m_pRenderer;
 				   std::map<std::string, Texture> m_mTextureMap;

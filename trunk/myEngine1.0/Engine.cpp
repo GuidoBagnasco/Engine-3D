@@ -17,6 +17,11 @@ hInstance(hInst), _t(t), _w(w), _h(h), hWnd(0), WndC(new Window(hInst) ), Rendr(
 
 
 bool Engine::init(){
+
+#ifdef _DEBUG
+	RedirectIOToConsole();
+#endif
+
 	if(WndC->CrearVentana(_t,_w,_h) == TRUE && Rendr->Init(WndC->hWnd()) == TRUE && m_iImporter->Init(*Rendr) == TRUE && m_diInput->init( hInstance, WndC->hWnd()) == TRUE)
 		return true;
 	return false;
@@ -26,10 +31,6 @@ bool Engine::init(){
 void Engine::run(){
 	//bool grs = true;
 	MSG Mess;
-
-	#ifdef _DEBUG
-		RedirectIOToConsole();
-	#endif
 
 	if(!G) return;
 	if(!G->Init(*Rendr)) return;
@@ -43,7 +44,7 @@ void Engine::run(){
 
 		m_diInput->reacquire();
 		Rendr->BeginFrame();
-		Camera::Main()->Update();
+		Rendr->c->Update();
 		G->Frame(*Rendr, *m_diInput, *m_tTimer);
 		G->OnSceneUpdate(m_tTimer);
 		G->DrawScenes(Rendr, m_tTimer);

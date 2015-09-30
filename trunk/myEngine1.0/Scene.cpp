@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "Renderer.h"
-#include "Entity.h"
+#include "Mesh.h"
+#include "Node.h"
 #include <algorithm>
 using namespace engine;
 
@@ -10,11 +11,9 @@ Scene::Scene(std::string sName){
 
 Scene::~Scene(){
 	m_pClsGroups.clear();
-	//m_pEntVectorA->clear();
-	//m_pEntVectorB->clear();
-	for (m_mIteratorEntity = m_mapEntity.begin(); m_mIteratorEntity != m_mapEntity.end(); m_mIteratorEntity++)
+	for (m_mIteratorMesh = m_mapMesh.begin(); m_mIteratorMesh != m_mapMesh.end(); m_mIteratorMesh++)
 	{
-		delete m_mIteratorEntity->second;
+		delete m_mIteratorMesh->second;
 	}
 }
 
@@ -27,57 +26,57 @@ std::string Scene::GetName(){
 }
 
 void Scene::Draw(Renderer* m_pRender){
-	if (m_mapEntity.size() > 0){
-		m_mIteratorEntity = m_mapEntity.begin();
+	if (m_mapMesh.size() > 0){
+		m_mIteratorMesh = m_mapMesh.begin();
 		do{
-			/* DISABLE THIS ! Para no dibujar AABBS!*/ //m_mIteratorEntity->second->drawAABB(*m_pRender);
-			m_mIteratorEntity->second->Draw();
-			m_mIteratorEntity++;
-		} while (m_mIteratorEntity != m_mapEntity.end());
+			/* DISABLE THIS ! Para no dibujar AABBS!*/ //m_mIteratorMesh->second->drawAABB(*m_pRender);
+			m_mIteratorMesh->second->Draw();
+			m_mIteratorMesh++;
+		} while (m_mIteratorMesh != m_mapMesh.end());
 	}
 }
 
 void Scene::Update(Timer* timer){
-	if (m_mapEntity.size() > 0){
+	if (m_mapMesh.size() > 0){
 		CheckColisions();
-		m_mIteratorEntity = m_mapEntity.begin();
+		m_mIteratorMesh = m_mapMesh.begin();
 		do
 		{
-			m_mIteratorEntity->second->Update(*timer);
-			m_mIteratorEntity++;
-		} while (m_mIteratorEntity != m_mapEntity.end());
+			m_mIteratorMesh->second->Update(*timer);
+			m_mIteratorMesh++;
+		} while (m_mIteratorMesh != m_mapMesh.end());
 	}
 }
 
-void Scene::Add(std::string sNombre, Entity* pEntidad){
-	m_mIteratorEntity = m_mapEntity.begin();
-	m_mIteratorEntity = m_mapEntity.find(sNombre);
-	if (m_mIteratorEntity != m_mapEntity.end())
+void Scene::Add(std::string sName, Mesh* pMesh){
+	m_mIteratorMesh = m_mapMesh.begin();
+	m_mIteratorMesh = m_mapMesh.find(sName);
+	if (m_mIteratorMesh != m_mapMesh.end())
 		return;
-	m_mapEntity[sNombre] = pEntidad;
+	m_mapMesh[sName] = pMesh;
 }
 
 
-void Scene::RemoveEntity(std::string sNombre){
-	m_mapEntity.erase(sNombre);
+void Scene::RemoveMesh(std::string sName){
+	m_mapMesh.erase(sName);
 }
 
-void Scene::RemoveEntity(Entity* pEntity){
-	m_mIteratorEntity = m_mapEntity.begin();
-	while (m_mIteratorEntity != m_mapEntity.end())
+void Scene::RemoveMesh(Mesh* pMesh){
+	m_mIteratorMesh = m_mapMesh.begin();
+	while (m_mIteratorMesh != m_mapMesh.end())
 	{
-		if (m_mIteratorEntity->second == pEntity)
-			m_mapEntity.erase(m_mIteratorEntity);
+		if (m_mIteratorMesh->second == pMesh)
+			m_mapMesh.erase(m_mIteratorMesh);
 	}
 }
 
-Entity*Scene::GetEntity(std::string sNombre){
-	/*m_mIteratorEntity = m_mapEntity.begin();
-	m_mIteratorEntity = m_mapEntity.find(sNombre);
-	return m_mIteratorEntity->second;*/
+Mesh*Scene::GetMesh(std::string sName){
+	/*m_mIteratorMesh = m_mapMesh.begin();
+	m_mIteratorMesh = m_mapMesh.find(sNombre);
+	return m_mIteratorMesh->second;*/
 
-	if (m_mapEntity.count(sNombre))
-		return m_mapEntity[sNombre];
+	if (m_mapMesh.count(sName))
+		return m_mapMesh[sName];
 	else
 		return NULL;
 }
@@ -89,8 +88,8 @@ bool Scene::AddClsGroup(std::string p_Name){
 	if (iter != m_pClsGroups.end())
 		return false;
 
-	Entity3DVector* NuevoGroupo = new Entity3DVector();
-	m_pClsGroups[p_Name] = NuevoGroupo;
+	Mesh3DVector* NewGroup = new Mesh3DVector();
+	m_pClsGroups[p_Name] = NewGroup;
 
 	return true;
 }
@@ -107,6 +106,7 @@ bool Scene::RemoveClsGroup(std::string p_Name){
 }
 
 void Scene::CheckColisions(){
+	/*
 	if (m_pClsGroups.size()>1)//si el mapa es mayor a 1 tiene 2 grupos
 	{
 		//este no llega al end, porque va a llegar el siguiente, ya que sino hacemos todo doble
@@ -120,18 +120,18 @@ void Scene::CheckColisions(){
 				//recorro el primer vector
 				for (int i = 0; i<m_pEntVectorA->size(); i++)
 				{
-					//me guardo la entity
+					//me guardo la Mesh
 					m_pEntA = (*m_pEntVectorA)[i];
 					//recorro el SEGUNO vector
 					for (int j = 0; j<m_pEntVectorB->size(); j++)
 					{
-						//me guardo la entity
+						//me guardo la Mesh
 						m_pEntB = (*m_pEntVectorB)[j];
 
-						if (m_pEntA->CheckCollision(*m_pEntB) != Entity::NoCollision) // me fijo si coliciono
+						if (m_pEntA->CheckCollision(*m_pEntB) != NoCollision) // me fijo si coliciono
 						{
 							//m_pEntA->ReturnToPreviousPos();
-							m_pEntB->ReturnToPreviousPos();
+							m_pEntB->m_node->ReturnToPreviousPos();
 						}
 					}
 				}
@@ -141,11 +141,11 @@ void Scene::CheckColisions(){
 			if (m_pEntVectorB->size() < 2)
 				break;
 		}
-	}
+	}*/
 }
 
-bool Scene::AddEntityToClsGroup(Entity* p_pEntity, std::string p_ColGroup){
-	//assert(p_pEntity);
+bool Scene::AddMeshToClsGroup(Mesh* p_pMesh, std::string p_ColGroup){
+	//assert(p_pMesh);
 
 	//me fijo que tenga nombre
 	if (p_ColGroup != ""){
@@ -157,19 +157,19 @@ bool Scene::AddEntityToClsGroup(Entity* p_pEntity, std::string p_ColGroup){
 		m_pEntVectorA = m_pClsGroupsIter->second;
 		//assert(m_pEntVectorA);
 
-		m_pEntVectorA->push_back(p_pEntity);//lo pongo en el vector grupo
-		p_pEntity->SetCollisionGroup(p_ColGroup);//le digo cual es su grupo
+		m_pEntVectorA->push_back(p_pMesh);//lo pongo en el vector grupo
+		p_pMesh->SetCollisionGroup(p_ColGroup);//le digo cual es su grupo
 	}
 	return true;
 }
 
-bool Scene::RemoveEntityFromClsGroup(Entity* p_pEntity){
-	if (p_pEntity->GetCollisionGroup() != "") // si tiene grupo
+bool Scene::RemoveMeshFromClsGroup(Mesh* p_pMesh){
+	if (p_pMesh->GetCollisionGroup() != "") // si tiene grupo
 	{
-		m_pEntVectorA = m_pClsGroups[p_pEntity->GetCollisionGroup()];
+		m_pEntVectorA = m_pClsGroups[p_pMesh->GetCollisionGroup()];
 		//assert(m_pEntVectorA);
 
-		Entity3DVectorIter ClsIterador = find(m_pEntVectorA->begin(), m_pEntVectorA->end(), p_pEntity);
+		Mesh3DVectorIter ClsIterador = find(m_pEntVectorA->begin(), m_pEntVectorA->end(), p_pMesh);
 
 		if (ClsIterador != m_pEntVectorA->end())
 			m_pEntVectorA->erase(ClsIterador);
@@ -177,9 +177,9 @@ bool Scene::RemoveEntityFromClsGroup(Entity* p_pEntity){
 	return true;
 }
 
-bool Scene::ChangeEntityFromClsGroup(Entity* p_pEntity, std::string NewClsGroup){
-	if (RemoveEntityFromClsGroup(p_pEntity)){
-		if (AddEntityToClsGroup(p_pEntity, NewClsGroup))
+bool Scene::ChangeMeshFromClsGroup(Mesh* p_pMesh, std::string NewClsGroup){
+	if (RemoveMeshFromClsGroup(p_pMesh)){
+		if (AddMeshToClsGroup(p_pMesh, NewClsGroup))
 			return true;
 	}
 

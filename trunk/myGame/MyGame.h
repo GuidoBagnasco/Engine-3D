@@ -7,6 +7,7 @@
 #include "timer\Timer.h"
 #include <iostream>
 #include "Mesh.h"
+#include "Node.h"
 #include "Cube.h"
 #include "Camera.h"
 
@@ -20,5 +21,8 @@ namespace MyGame{
 		engine::Camera* mainCamera;
 		engine::Cube* mesh;
 		engine::Mesh* plane;
+
+		engine::Node* pig;
+		engine::Node* car;
 	};
 }

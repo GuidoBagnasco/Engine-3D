@@ -6,7 +6,7 @@
 
 namespace engine{
 	class Renderer;
-	class Entity;
+	class Mesh;
 	class TileMap;
 	class Timer;
 
@@ -15,39 +15,39 @@ namespace engine{
 		Scene(std::string name); //le pasamos un nombre para identificarlo
 		~Scene();
 		void Update(Timer*);
-		void Draw(Renderer* m_pRender);
-		void Add(std::string sNombre, Entity* pEntidad);//agrego entidad
-		void RemoveEntity(Entity* pEntity);//quito entidad
-		void RemoveEntity(std::string sNombre);//quito entidad por nombre
-		Entity* GetEntity(std::string sNombre);
-		void SetName(std::string sName);
+		void Draw(Renderer*);
+		void Add(std::string, Mesh*);//agrego entidad
+		void RemoveMesh(Mesh*);//quito entidad
+		void RemoveMesh(std::string);//quito entidad por nombre
+		Mesh* GetMesh(std::string);
+		void SetName(std::string);
 		std::string GetName();
 		//colisiones
-		bool AddClsGroup(std::string p_Name);
-		bool RemoveClsGroup(std::string p_Name);
-		bool AddEntityToClsGroup(Entity* p_pEntity, std::string p_ColGroup);
-		bool RemoveEntityFromClsGroup(Entity* p_pEntity);
-		bool ChangeEntityFromClsGroup(Entity* p_pEntity, std::string NewClsGroup);
+		bool AddClsGroup(std::string);
+		bool RemoveClsGroup(std::string);
+		bool AddMeshToClsGroup(Mesh*, std::string);
+		bool RemoveMeshFromClsGroup(Mesh*);
+		bool ChangeMeshFromClsGroup(Mesh*, std::string);
 		void CheckColisions();
 		//-----------------------------------------
 	private:
 		std::string m_sName;
-		std::map<std::string, Entity*> m_mapEntity;//entidades que tiene
-		std::map<std::string, Entity*>::iterator m_mIteratorEntity;//iterador para recorrerlas	
-		typedef std::vector<Entity*> Entity3DVector;//defino
-		typedef Entity3DVector::iterator Entity3DVectorIter;//defino	
-		typedef std::map< std::string, Entity3DVector*> CollisionGroupMap;// defino
-		typedef std::map< std::string, Entity3DVector*>::iterator CollisionGroupMapIter; //defino
+		std::map<std::string, Mesh*> m_mapMesh;//entidades que tiene
+		std::map<std::string, Mesh*>::iterator m_mIteratorMesh;//iterador para recorrerlas	
+		typedef std::vector<Mesh*> Mesh3DVector;//defino
+		typedef Mesh3DVector::iterator Mesh3DVectorIter;//defino	
+		typedef std::map< std::string, Mesh3DVector*> CollisionGroupMap;// defino
+		typedef std::map< std::string, Mesh3DVector*>::iterator CollisionGroupMapIter; //defino
 		CollisionGroupMap m_pClsGroups;
 		CollisionGroupMapIter m_pClsGroupsIter;
 		//------------------
 		//Todo esto es para el los for del check col
 		CollisionGroupMapIter m_pClsGroupsIterA;
 		CollisionGroupMapIter m_pClsGroupsIterB;
-		Entity3DVector *m_pEntVectorA;
-		Entity3DVector *m_pEntVectorB;
-		Entity *m_pEntA;
-		Entity *m_pEntB;
+		Mesh3DVector *m_pEntVectorA;
+		Mesh3DVector *m_pEntVectorB;
+		Mesh *m_pEntA;
+		Mesh *m_pEntB;
 		//------------------
 
 	public:	// Virtual functions to override if the user want to make his own scenes...

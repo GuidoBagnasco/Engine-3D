@@ -64,6 +64,9 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)external\assimp\PostBuild"  "$(SolutionDir)$(Configuration)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -82,6 +85,9 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(SolutionDir)external\assimp\PostBuild"  "$(SolutionDir)$(Configuration)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
@@ -97,7 +103,9 @@
     <ClInclude Include="input\Input.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="myEngine_API.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="RenderTypes.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="timer\Timer.h" />
     <ClInclude Include="TinyXML\tinyxml2.h" />
@@ -118,6 +126,7 @@
     <ClCompile Include="input\DirectInput.cpp" />
     <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="RenderTypes.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="timer\Timer.cpp" />
@@ -132,6 +141,9 @@
     <None Include="input\Input.inl" />
     <None Include="timer\Timer.inl" />
     <None Include="VertexBuffer.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngine1.0.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

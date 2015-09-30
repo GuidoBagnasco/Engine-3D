@@ -6,13 +6,12 @@
 #include <iostream>
 
 using namespace MyGame;
-float mSpeed = 0.3f;
-
+float mSpeed = 0.1f;
 
 bool Game::Init(engine::Renderer& r){
 
-	mainCamera = engine::Camera::Main();
-	mainCamera->SetPosition(0, 0, -200);
+	mainCamera = r.c;
+	mainCamera->SetPosition(&D3DXVECTOR3(0, 0, -200));
 	CreateScene("Scene1");
 	engine::Scene* scene1 = GetScene("Scene1");
 
@@ -21,22 +20,35 @@ bool Game::Init(engine::Renderer& r){
 
 	engine::Importer* importer = engine::Importer::GetInstance();
 
-	importer->ImportScene(*scene1, "scene1.xml");
-
+	//importer->ImportScene(*scene1, "scene1.xml");
+	/*
 	plane = new engine::Mesh(r, true);
-	importer->ImportMesh(*plane, "Mesh.obj");
-	
-	plane->SetScale(1.0f,1.0f, 1.0f);
-	plane->SetPos(50.0f, -30.0f, 0.0f);
-
-
+	importer->ImportMesh(*plane, "Porsche.obj");
 	mesh = new engine::Cube(r);
-
-	mesh->SetScale(100, 100, 100);
-
-
-
+	*/
 	r.SetBackgroundColor(0, 0, 0);
+
+	pig = new engine::Node();
+	if (importer->importScene("cerdo.x", *pig))
+	{
+		pig->SetScale(1.0f, 1.0f, 1.0f);
+	}
+	else{
+		delete pig;
+		pig = NULL;
+	}
+
+	car = new engine::Node();
+	if (importer->importScene("Porsche.x", *car))
+	{
+		car->SetPos(-50.0f, 0.0f, -50.0f);
+		car->SetScale(10.0f, 10.0f, 10.0f);
+	}
+	else{
+		delete car;
+		car = NULL;
+	}
+
 
 	//
 	return true;
@@ -48,11 +60,11 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 	// Camera Update 
 
 	if(dInput.keyDown(engine::Input::KEY_UP) || dInput.keyDown(engine::Input::KEY_W)){
-		mainCamera->Walk(mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveForward(mSpeed * timer.timeBetweenFrames());
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_DOWN) || dInput.keyDown(engine::Input::KEY_S)){
-		mainCamera->Walk(-mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveForward(-mSpeed * timer.timeBetweenFrames());
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_LEFT) || dInput.keyDown(engine::Input::KEY_A)){
@@ -63,16 +75,19 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		mainCamera->Strafe(mSpeed * timer.timeBetweenFrames());
 	}
 
-	//mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 100 * timer.timeBetweenFrames());
+	if (dInput.mouseDown(engine::Input::MB_1)){
+		mainCamera->Yaw(dInput.mouseRelPosX() * mSpeed / 200 * timer.timeBetweenFrames());
+		mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 200 * timer.timeBetweenFrames());
+	}
 
-	//mainCamera->Pitch(dInput.mouseRelPosY() * mSpeed / 100 * timer.timeBetweenFrames());
+	
 
 	if(dInput.keyDown(engine::Input::KEY_SPACE)){
-		mainCamera->Jump(mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveUp(mSpeed * timer.timeBetweenFrames());
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_LCONTROL)){
-		mainCamera->Jump(-mSpeed * timer.timeBetweenFrames());
+		mainCamera->MoveUp(-mSpeed * timer.timeBetweenFrames());
 	}
 
 	if(dInput.keyDown(engine::Input::KEY_E)){
@@ -83,19 +98,69 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		mainCamera->Roll(mSpeed / 100 * timer.timeBetweenFrames());
 	}
 
-	if(mesh != NULL)
-		mesh->Draw();
-		
+	if (dInput.keyDown(engine::Input::KEY_ESCAPE))
+		setGame(false);
 
+	static float pos = 0;
+	if (dInput.keyDown(engine::Input::KEY_X))
+		pos += mSpeed * 0.5f*timer.timeBetweenFrames();
+		pig->SetPos(pos, 0.0f, 0.0f);
+
+	if (dInput.keyDown(engine::Input::KEY_C))
+	{
+		pig->GetChild(0)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
+		pig->GetChild(0)->GetChild(0)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
+		pig->GetChild(1)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
+	}
+
+	static float angle2 = 0;
+	if (dInput.keyDown(engine::Input::KEY_P))
+	{
+		angle2 += 0.01f;
+		pig->SetRotation(angle2, 0.0f, 0.0f);
+	}
+
+	//pig->GetChild(0)->SetRotation(0.0f, mSpeed/10*timer.timeBetweenFrames(), 0.0f);
+	//13
+	
+	for (int i = 1; i < 5; i++) {
+		static float angle = 0;
+		angle += mSpeed / 100 * timer.timeBetweenFrames();
+		car->GetChild(i)->GetChild(0)->SetRotation(angle, 0.0f, 0.0f);
+		std::cout << car->GetChild(i)->GetName() << std::endl;
+		//pig->GetChild(0)->SetRotation(0.0f, angle, 0.0f);
+	}
+	
+	/*
 	if(plane != NULL)
 		plane->Draw();
-	// Fin camera Update
+
+	if (mesh != NULL)
+		mesh->Draw();
+
+	*/
+
+	if (pig != NULL)
+		pig->Draw(r);
+
+	if (car != NULL)
+		car->Draw(r);
 }
 
 
 void Game::DeInit(){
-	if(mesh){
+	if (mesh){
 		delete mesh;
 		mesh = NULL;
-	}	
+	}
+
+	if (pig){
+		delete pig;
+		pig = NULL;
+	}
+
+	if (car){
+		delete car;
+		car = NULL;
+	}
 }

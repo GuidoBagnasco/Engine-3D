@@ -8,7 +8,7 @@ namespace MyGame{
 		MyCustomScene(std::string s) : Scene(s){ }
 		~MyCustomScene() { }
 		virtual void OnStart() { std::cout << "Initialized" << std::endl;  }
-		virtual void OnUpdate(engine::Timer*) { /*std::cout << Testing MyCustomScene Loop" << std::endl;*/ }
+		virtual void OnUpdate(engine::Timer*) {  }
 		virtual void OnShutdown() { std::cout << "Shuting down" << std::endl; }
 	};
 }

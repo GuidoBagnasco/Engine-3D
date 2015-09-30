@@ -84,6 +84,12 @@
     <ClInclude Include="Cube.h">
       <Filter>Archivos de encabezado\include</Filter>
     </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Archivos de encabezado\include</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Renderer.cpp">
@@ -143,6 +149,9 @@
     <ClCompile Include="Cube.cpp">
       <Filter>Archivos de código fuente\src</Filter>
     </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Archivos de código fuente\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="timer\Timer.inl">
@@ -157,5 +166,10 @@
     <None Include="VertexBuffer.inl">
       <Filter>Archivos de encabezado\include</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngine1.0.rc">
+      <Filter>Archivos de recursos</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

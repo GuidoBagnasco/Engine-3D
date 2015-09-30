@@ -10,10 +10,12 @@ namespace engine{
 
 class VertexBuffer;
 class IndexBuffer;
+class Camera;
 
 
 class MYENGINE_API Renderer{
 	public:
+		Camera * c;
 		IDirect3D9* d3d;
 		IDirect3DDevice9* d3d_dev;
 
@@ -45,6 +47,7 @@ class MYENGINE_API Renderer{
 	//	void SetCurrentTexture(const &texture t);
 	//	IDirect3DTexture9 * LoadTexture(std::string& s);
 	private:
+		
 		short r, g, b;
 		VertexBuffer* p_vb;
 		IndexBuffer* p_ib;

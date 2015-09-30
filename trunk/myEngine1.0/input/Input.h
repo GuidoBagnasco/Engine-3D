@@ -194,7 +194,7 @@ public:
 public:
 	void reset();
 
-	bool keyDown(KeyCode eKey);
+	inline bool keyDown(KeyCode eKey);
 	bool keyUp(KeyCode eKey);
 
 	bool mouseDown(MouseButton eButtonID);

@@ -7,9 +7,17 @@
 
 
 namespace engine{
+	enum CollisionResult{
+		CollisionVertical,
+		CollisionHorizontal,
+		NoCollision,
+		CollisionZ
+	};
+
 	class Renderer;
 	class IndexBuffer;
 	class VertexBuffer;
+	class Node;
 
 	class MYENGINE_API Mesh : public Entity{
 
@@ -19,10 +27,10 @@ namespace engine{
 
 		void SetData(ColorVertex* , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
 		void SetData(MeshVertex*  , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
-
-	public:
-		void Draw(Renderer& r) const {  }
+		void SetTexture(Texture);
+		//void Draw(Renderer& r) const {  }
 		void Draw();
+		//void DrawAABB(Renderer& rkRenderer) const;
 
 	private:
 		IndexBuffer* m_pIndexBuffer;

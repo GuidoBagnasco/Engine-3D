@@ -3,6 +3,7 @@
 #include "Mesh.h"
 #include "animation.h"
 #include "Renderer.h"
+#include "Node.h"
 
 // ----------------- Assimp ----------------- //
 #include "assimp\include\Importer.hpp"
@@ -51,7 +52,9 @@ bool Importer::ImportScene(Scene& mScene, std::string fileName){
 
 void Importer::ImportMesh(Mesh& mesh, std::string fileName){
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile(fileName, aiProcess_CalcTangentSpace | aiProcess_Triangulate | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
+	const aiScene* scene = importer.ReadFile(fileName,
+		aiProcess_CalcTangentSpace | aiProcess_Triangulate |
+		aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
 	
 	if(!scene)
 		return;
@@ -189,4 +192,116 @@ int Importer::ColorConverter(int hexValue) {
   int g = ((hexValue >> 8) & 0xFF) / 255.0;   // Extract the GG byte
   int b = ((hexValue) & 0xFF) / 255.0;        // Extract the BB byte
   return engine_COLOR_RGB(r,g,b);
+}
+
+
+bool Importer::importScene(const std::string& fileName, Node& SceneRoot){
+
+	Assimp::Importer kImporter;
+
+	const aiScene* AiScene = kImporter.ReadFile(fileName,
+		aiPrimitiveType_LINE | aiPrimitiveType_POINT |
+		aiProcess_Triangulate | aiProcess_SortByPType | aiProcess_ConvertToLeftHanded);
+
+	if (AiScene){
+		SceneRoot.SetName(AiScene->mRootNode->mName.C_Str());
+		m_sCurrentModelPath = fileName;
+		importNode(SceneRoot, AiScene->mRootNode, AiScene);
+		return true;
+	}
+
+	return false;
+}
+#include <iostream>
+bool Importer::importNode(Node& kNode, aiNode* AiNode, const aiScene* AiScene){
+
+	kNode.SetName(AiNode->mName.C_Str());
+
+	aiMatrix4x4 m = AiNode->mTransformation.Transpose();
+	kNode.SetFirstTransformationFromAssimp(m.a1, m.a2, m.a3, m.a4,
+		m.b1, m.b2, m.b3, m.b4,
+		m.c1, m.c2, m.c3, m.c4,
+		m.d1, m.d2, m.d3, m.d4);
+
+	/*
+	aiVector3D * s;
+	aiQuaternion * q;
+	aiVector3D * p;
+
+	m.Decompose(*s, *q, *p);
+
+	D3DXVECTOR3 dxS = D3DXVECTOR3(s->x, s->y, s->z);
+	D3DXQUATERNION dxQ = D3DXQUATERNION(q->x, q->y, q->z, q->w);
+	D3DXVECTOR3 dxP = D3DXVECTOR3(p->x, p->y, p->z);
+
+	kNode.SetDiscomposedTransformationFromAssimp(dxS,dxQ,dxP);
+	*/
+
+	for (unsigned int i = 0; i<AiNode->mNumChildren; i++){
+		Node* pkNode = new Node();
+		pkNode->SetName(AiNode->mChildren[i]->mName.C_Str());
+
+		//pkNode->SetPos(AiNode->mChildren[i]->mTransformation)
+		//std::cout << pkNode->GetName() << std::endl;
+		importNode(*pkNode, AiNode->mChildren[i], AiScene);
+		kNode.AddChild(pkNode);
+		std::cout << pkNode->GetName() << " is child of " << kNode.GetName() << std::endl;
+	}
+
+	for (unsigned int i = 0; i<AiNode->mNumMeshes; i++){
+		Mesh* pkMesh = new Mesh(*m_pRenderer, true);
+		kNode.AddMesh(pkMesh);
+
+		aiMesh* pkAiMesh = AiScene->mMeshes[AiNode->mMeshes[i]];
+		aiMaterial* pkAiMaterial = AiScene->mMaterials[pkAiMesh->mMaterialIndex];
+
+		importMesh(pkAiMesh, pkAiMaterial, *pkMesh);
+	}
+	//std::cout << std::endl << std::endl;
+	return true;
+}
+
+bool Importer::importMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial, Mesh& kMesh){
+
+	kMesh.SetName(pkAiMesh->mName.C_Str());
+
+	MeshVertex* pVertices = new MeshVertex[pkAiMesh->mNumVertices];
+	for (unsigned int i = 0; i<pkAiMesh->mNumVertices; i++){
+		pVertices[i].x = pkAiMesh->mVertices[i].x;
+		pVertices[i].y = pkAiMesh->mVertices[i].y;
+		pVertices[i].z = pkAiMesh->mVertices[i].z;
+		if (pkAiMesh->mTextureCoords[0] != NULL) {
+			pVertices[i].u = pkAiMesh->mTextureCoords[0][i].x;
+			pVertices[i].v = pkAiMesh->mTextureCoords[0][i].y;
+		}
+
+
+		if (pkAiMesh->HasNormals()){
+			pVertices[i].nx = pkAiMesh->mNormals[i].x;
+			pVertices[i].ny = pkAiMesh->mNormals[i].y;
+			pVertices[i].nz = pkAiMesh->mNormals[i].z;
+		}
+	}
+	size_t uiIndexCount = pkAiMesh->mNumFaces * 3;
+	unsigned short* pausIndices = new unsigned short[uiIndexCount];
+	for (unsigned int i = 0; i<pkAiMesh->mNumFaces; i++){
+		pausIndices[i * 3 + 0] = pkAiMesh->mFaces[i].mIndices[0];
+		pausIndices[i * 3 + 1] = pkAiMesh->mFaces[i].mIndices[1];
+		pausIndices[i * 3 + 2] = pkAiMesh->mFaces[i].mIndices[2];
+	}
+	kMesh.SetData(pVertices, pkAiMesh->mNumVertices, engine::Primitive::TriangleList, pausIndices, uiIndexCount);
+	kMesh.SetName(pkAiMesh->mName.C_Str());
+
+	if (pkAiMaterial){
+		size_t found = m_sCurrentModelPath.find_last_of("/\\");
+		std::string texPath = m_sCurrentModelPath.substr(0, found + 1);
+		aiString aipath;
+		pkAiMaterial->Get(AI_MATKEY_TEXTURE(aiTextureType_DIFFUSE, 0), aipath);
+		texPath.append(aipath.C_Str());
+
+		Texture TheTexture = GetRenderer()->LoadTexture(texPath);
+		kMesh.SetTexture(TheTexture);
+	}
+
+	return true;
 }
