@@ -28,9 +28,11 @@ namespace engine{
 		void SetData(ColorVertex* , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
 		void SetData(MeshVertex*  , size_t vertexCount, engine::Primitive, unsigned short*, size_t indexCount);
 		void SetTexture(Texture);
-		//void Draw(Renderer& r) const {  }
+		
 		void Draw();
-		//void DrawAABB(Renderer& rkRenderer) const;
+		void DrawBB() const;
+
+		D3DXVECTOR3* m_pBB;
 
 	private:
 		IndexBuffer* m_pIndexBuffer;
@@ -38,5 +40,9 @@ namespace engine{
 		Primitive m_Primitive;
 		Renderer& m_rRenderer;
 		Texture m_pTexture;
+
+		MeshVertex* m_TextureVertex;
+		unsigned int m_VertexCount = 0;
+
 	};
 }

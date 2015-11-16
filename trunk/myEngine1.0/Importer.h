@@ -34,15 +34,12 @@ namespace engine{
 			Importer();
 			~Importer();
 			bool Init(Renderer&);
-			bool ImportScene(Scene&, std::string fileName);
 
-			bool importNode(Node& kNode, aiNode* AiNode, const aiScene* AiScene);
-			bool importMesh(const aiMesh* AiMesh, const aiMaterial* AiMaterial, Mesh& kMesh);
-			bool importScene(const std::string& FileName, Node& theNode);
+			bool ImportNode(Node&, aiNode*, const aiScene*);
+			bool ImportMesh(const aiMesh*, const aiMaterial*, Mesh&);
+			bool ImportScene(const std::string&, Node&);
 
-
-			void ImportMesh(Mesh& mesh, std::string FileName);
-			void ImportAnimations(std::vector<Animation*>&, tinyxml2::XMLElement*);
+			void ImportAnimations(std::vector<Animation*>&, tinyxml2::XMLElement*);		// Sprites --- Not in use
 
 			static Importer* GetInstance(){
 				return m_pInstance;
@@ -50,16 +47,12 @@ namespace engine{
 
 			Renderer* GetRenderer() const;
 			Texture LoadTexture(std::string path, int KeyCode);
-			Texture LoadTexture(XMLNode& kTextureNode, const char* textureName);
 
 		private:
-			TileMap* LoadTileMap(XMLNode& kTileMapNode);
-			Tile* CreateTile(XMLNode& kTileSetNode, Texture pkTexture, unsigned int iId, int textWidth, int textHeight);
 			int ColorConverter(int);
 			std::string m_sCurrentModelPath;
 			static Importer* m_pInstance;
 				   Renderer* m_pRenderer;
 				   std::map<std::string, Texture> m_mTextureMap;
-				   std::map<std::string , TileMap*> m_mTilemaps;
 	};
 }

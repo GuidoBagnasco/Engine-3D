@@ -8,7 +8,7 @@
 using namespace engine;
 
 
-Mesh::Mesh(Renderer& r, bool isTextured) :/* Entity(),*/ m_rRenderer(r), m_pVertexBuffer(NULL), m_pIndexBuffer(NULL), m_pTexture(NoTexture){
+Mesh::Mesh(Renderer& r, bool isTextured) :/* Entity(),*/ m_rRenderer(r), m_pVertexBuffer(NULL), m_pIndexBuffer(NULL), m_pTexture(NoTexture), m_pBB(new D3DXVECTOR3[8]){
 
 	if(!isTextured){
 		m_pVertexBuffer = r.CreateVertexBuffer(sizeof(engine::ColorVertex), engine::ColorVertexType);
@@ -44,8 +44,14 @@ void Mesh::SetData(ColorVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, 
 
 void Mesh::SetData(MeshVertex* Tex_Vertex, size_t vertexCount, Primitive Prim, unsigned short* pInt, size_t indexCount){
 	m_Primitive = Prim;
+
+	m_TextureVertex = Tex_Vertex;
+	m_VertexCount = vertexCount;
+
 	m_pVertexBuffer->SetVertexData((void *)Tex_Vertex, vertexCount);
 	m_pIndexBuffer->SetIndexData(pInt, indexCount);
+
+	DrawBB();
 }
 
 void Mesh::SetTexture(Texture t){
@@ -61,22 +67,42 @@ void Mesh::Draw(){
 }
 
 
-/*
-void Mesh::DrawAABB(Renderer& rkRenderer) const{
-	static ColorVertex s_akAABBVertices[5];
-	static bool s_bIsInitialized = false;
-	if (!s_bIsInitialized){
-		s_bIsInitialized = true;
 
-		s_akAABBVertices[0].x = -0.5;	s_akAABBVertices[0].y = -0.5;	s_akAABBVertices[0].z = 0.0; s_akAABBVertices[0].color = engine_COLOR_RGB(255, 50, 50);
-		s_akAABBVertices[1].x = -0.5;	s_akAABBVertices[1].y = 0.5;	s_akAABBVertices[1].z = 0.0; s_akAABBVertices[1].color = engine_COLOR_RGB(255, 70, 70);
-		s_akAABBVertices[2].x = 0.5;	s_akAABBVertices[2].y = 0.5;	s_akAABBVertices[2].z = 0.0; s_akAABBVertices[2].color = engine_COLOR_RGB(255, 30, 30);
-		s_akAABBVertices[3].x = 0.5;	s_akAABBVertices[3].y = -0.5;	s_akAABBVertices[3].z = 0.0; s_akAABBVertices[3].color = engine_COLOR_RGB(255, 15, 15);
-		s_akAABBVertices[4].x = -0.5;	s_akAABBVertices[4].y = -0.5;	s_akAABBVertices[4].z = 0.0; s_akAABBVertices[4].color = engine_COLOR_RGB(255, 95, 90);
+void Mesh::DrawBB() const{
+	D3DXVECTOR3 v_BoundMin;
+	D3DXVECTOR3 v_BoundMax;
+
+	v_BoundMin = D3DXVECTOR3(m_TextureVertex[0].x, m_TextureVertex[0].y, m_TextureVertex[0].z);
+	v_BoundMax = D3DXVECTOR3(m_TextureVertex[0].x, m_TextureVertex[0].y, m_TextureVertex[0].z);
+
+
+	for (int i = 1; i < m_VertexCount; i++){
+		// X
+		if (m_TextureVertex[i].x > v_BoundMax.x)
+			v_BoundMax.x = m_TextureVertex[i].x;
+		else if (m_TextureVertex[i].x < v_BoundMin.x)
+			v_BoundMin.x = m_TextureVertex[i].x;
+
+		// Y
+		if (m_TextureVertex[i].y > v_BoundMax.y)
+			v_BoundMax.y = m_TextureVertex[i].y;
+		else if (m_TextureVertex[i].y < v_BoundMin.y)
+			v_BoundMin.y = m_TextureVertex[i].y;
+
+		// Z
+		if (m_TextureVertex[i].z > v_BoundMax.z)
+			v_BoundMax.z = m_TextureVertex[i].z;
+		else if (m_TextureVertex[i].z < v_BoundMin.z)
+			v_BoundMin.z = m_TextureVertex[i].z;
 	}
 
-	rkRenderer.SetCurrentTexture(NoTexture);
-	rkRenderer.SetMatrix(World, _TrMatrix);
-	rkRenderer.Draw(s_akAABBVertices, engine::LineStrip, 5);
+	m_pBB[0] = v_BoundMax;
+	m_pBB[1] = D3DXVECTOR3(v_BoundMax.x, v_BoundMin.y, v_BoundMax.z);
+	m_pBB[2] = D3DXVECTOR3(v_BoundMin.x, v_BoundMin.y, v_BoundMax.z);
+	m_pBB[3] = D3DXVECTOR3(v_BoundMin.x, v_BoundMax.y, v_BoundMax.z);
+	m_pBB[4] = D3DXVECTOR3(v_BoundMax.x, v_BoundMax.y, v_BoundMin.z);
+	m_pBB[5] = D3DXVECTOR3(v_BoundMax.x, v_BoundMin.y, v_BoundMin.z);
+	m_pBB[6] = v_BoundMin;
+	m_pBB[7] = D3DXVECTOR3(v_BoundMin.x, v_BoundMax.y, v_BoundMin.z);
 }
-*/
+

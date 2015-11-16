@@ -3,6 +3,7 @@
 #include "myEngine_API.h"
 #include "RenderTypes.h"
 #include "EMath.h"
+#include "Frustum.h"
 #include <d3d9.h>
 #include <vector>
 
@@ -16,6 +17,7 @@ class Camera;
 class MYENGINE_API Renderer{
 	public:
 		Camera * c;
+		Frustum * m_frustum;
 		IDirect3D9* d3d;
 		IDirect3DDevice9* d3d_dev;
 
@@ -35,7 +37,7 @@ class MYENGINE_API Renderer{
 
 		const Texture LoadTexture(const std::string& name, int KeyCode = 0);
 		void SetCurrentTexture(const Texture&);
-		void LoadIdentity();
+		//void LoadIdentity();
 		void SetTransformMatrix(D3DXMATRIX*);
 
 		VertexBuffer* CreateVertexBuffer(size_t vSize, unsigned int FVF);

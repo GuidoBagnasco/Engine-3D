@@ -8,8 +8,8 @@
 using namespace MyGame;
 float mSpeed = 0.1f;
 
-bool Game::Init(engine::Renderer& r){
 
+bool Game::Init(engine::Renderer& r){
 	mainCamera = r.c;
 	mainCamera->SetPosition(&D3DXVECTOR3(0, 0, -200));
 	CreateScene("Scene1");
@@ -29,8 +29,7 @@ bool Game::Init(engine::Renderer& r){
 	r.SetBackgroundColor(0, 0, 0);
 
 	pig = new engine::Node();
-	if (importer->importScene("cerdo.x", *pig))
-	{
+	if (importer->ImportScene("cerdo.x", *pig)){
 		pig->SetScale(1.0f, 1.0f, 1.0f);
 	}
 	else{
@@ -39,8 +38,7 @@ bool Game::Init(engine::Renderer& r){
 	}
 
 	car = new engine::Node();
-	if (importer->importScene("Porsche.x", *car))
-	{
+	if (importer->ImportScene("Porsche.x", *car)){
 		car->SetPos(-50.0f, 0.0f, -50.0f);
 		car->SetScale(10.0f, 10.0f, 10.0f);
 	}
@@ -49,8 +47,6 @@ bool Game::Init(engine::Renderer& r){
 		car = NULL;
 	}
 
-
-	//
 	return true;
 }
 
@@ -106,31 +102,34 @@ void Game::Frame(engine::Renderer& r, engine::DirectInput& dInput, engine::Timer
 		pos += mSpeed * 0.5f*timer.timeBetweenFrames();
 		pig->SetPos(pos, 0.0f, 0.0f);
 
-	if (dInput.keyDown(engine::Input::KEY_C))
-	{
+	if (dInput.keyDown(engine::Input::KEY_C)){
 		pig->GetChild(0)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
 		pig->GetChild(0)->GetChild(0)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
 		pig->GetChild(1)->SetPos(mSpeed * 0.5f*timer.timeBetweenFrames(), 0.0f, 0.0f);
 	}
 
 	static float angle2 = 0;
-	if (dInput.keyDown(engine::Input::KEY_P))
-	{
+	if (dInput.keyDown(engine::Input::KEY_P)){
 		angle2 += 0.01f;
 		pig->SetRotation(angle2, 0.0f, 0.0f);
 	}
 
 	//pig->GetChild(0)->SetRotation(0.0f, mSpeed/10*timer.timeBetweenFrames(), 0.0f);
-	//13
 	
+	static float angle = 0;
+	angle += mSpeed / 25 * timer.timeBetweenFrames();
+	for (int i = 1; i <= 4; i++) {
+		car->GetChild("wheel00" + std::to_string(i))->GetChild(0)->SetRotation(angle, 0.0f, 0.0f);
+	}
+
+	/*
 	for (int i = 1; i < 5; i++) {
 		static float angle = 0;
 		angle += mSpeed / 100 * timer.timeBetweenFrames();
 		car->GetChild(i)->GetChild(0)->SetRotation(angle, 0.0f, 0.0f);
-		std::cout << car->GetChild(i)->GetName() << std::endl;
-		//pig->GetChild(0)->SetRotation(0.0f, angle, 0.0f);
 	}
-	
+	*/
+
 	/*
 	if(plane != NULL)
 		plane->Draw();

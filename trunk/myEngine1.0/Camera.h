@@ -3,10 +3,12 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include <Windows.h>
+#include "Node.h"
+
 namespace engine{
 	class Renderer;
 	class Timer;
-	class MYENGINE_API Camera{
+	class MYENGINE_API Camera : public Node{
 		public:
 			Camera(Renderer&);
 			void CreateProjectionMatrix(float fov, float aspect, float nearPlane, float farPlane);
@@ -52,7 +54,6 @@ namespace engine{
 			D3DXVECTOR3 m_right;
 			D3DXVECTOR3 m_up;
 			D3DXVECTOR3 m_look;
-			D3DXVECTOR3 m_position;
 			D3DXVECTOR3 m_lookAt;
 			D3DXVECTOR3 m_velocity;
 			float       m_yaw;

@@ -11,7 +11,8 @@ Renderer::Renderer():
 d3d(NULL),
 d3d_dev(NULL),
 p_vb(NULL),
-p_ib(NULL)
+p_ib(NULL),
+m_frustum(new Frustum(this))
 //p_vTexture(NULL)
 {
 	// Again, Nothing to do.
@@ -41,6 +42,11 @@ Renderer::~Renderer(){
 		d3d = NULL;
 	}
 	
+	if (m_frustum){
+		delete m_frustum;
+		m_frustum = NULL;
+	}
+
 	for (std::vector<Texture>::iterator it = m_vTexture.begin(); it != m_vTexture.end(); it++){
 		(*it)->Release();
 		(*it) = NULL;
@@ -70,7 +76,7 @@ bool Renderer::Init(HWND _HwnD){
 		d3d_dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 		d3d_dev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 		d3d_dev->SetRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
-		d3d_dev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+		d3d_dev->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
 
 		
 		D3DVIEWPORT9 kViewport; //CAMARA 
@@ -78,12 +84,13 @@ bool Renderer::Init(HWND _HwnD){
 
 		float fViewPortWidth = static_cast<float>(kViewport.Width);
 		float fViewPortHeight = static_cast<float>(kViewport.Height);
-
+		/*
 		D3DXMATRIX projectionMatrix;  //MATRIX PROYEC...
 		D3DXMatrixPerspectiveFovLH(&projectionMatrix, D3DXToRadian(90), fViewPortWidth / fViewPortHeight, 1.0f, 3000.0f);
 		//D3DXMatrixOrthoLH(&projectionMatrix,fViewPortWidth,fViewPortHeight, -1.0f, 1.0f);
 		d3d_dev->SetTransform(D3DTS_PROJECTION, &projectionMatrix);
-
+		*/
+		/*
 		// view
 		D3DXMATRIX viewMatrix;
 		D3DXVECTOR3 Position(0.0f, 0.0f, -500.0f);
@@ -91,7 +98,7 @@ bool Renderer::Init(HWND _HwnD){
 		D3DXVECTOR3 Up(0.0f, 1.0f, 0.0f);
 		D3DXMatrixLookAtLH(&viewMatrix, &Position, &Target, &Up);
 		d3d_dev->SetTransform(D3DTS_VIEW, &viewMatrix);
-
+		*/
 		// world
 		D3DXMATRIX worldMatrix;
 		D3DXMatrixIdentity(&worldMatrix);
@@ -124,8 +131,7 @@ void Renderer::BeginFrame(){
 	d3d_dev->BeginScene();
 }
 
-void Renderer::SetBackgroundColor(short _r,short _g, short _b)
-{
+void Renderer::SetBackgroundColor(short _r,short _g, short _b){
 	r = _r;
 	g = _g;
 	b = _b;
@@ -133,10 +139,10 @@ void Renderer::SetBackgroundColor(short _r,short _g, short _b)
 
 void Renderer::EndFrame(){
 	d3d_dev->EndScene();
-	d3d_dev->Present(NULL,NULL,NULL,NULL);
+	d3d_dev->Present(NULL, NULL, NULL, NULL);
 }
 
-// TODO: Erase Priomitive Type ???
+// TODO: Erase Primitive Type ???
 D3DPRIMITIVETYPE primitiveMap[engine::PrimitiveCount] = {
 	D3DPT_TRIANGLELIST,
 	D3DPT_TRIANGLESTRIP,
@@ -157,6 +163,7 @@ void Renderer::SetMatrix(MatrixType matrixType, const Matrix& matrix){
 	d3d_dev->SetTransform(MatrixTypeMapping[matrixType], matrix);
 }
 
+/*
 void Renderer::LoadIdentity(){
 	D3DXMATRIX kTempMatrix;
 
@@ -176,6 +183,7 @@ void Renderer::LoadIdentity(){
 	// set the matrix
 	d3d_dev->SetTransform(D3DTS_VIEW, &kTempMatrix);
 }
+*/
 
 void Renderer::SetTransformMatrix(D3DXMATRIX* kMatrix){
 	// set the matrix
@@ -183,8 +191,8 @@ void Renderer::SetTransformMatrix(D3DXMATRIX* kMatrix){
 }
 
 void Renderer::Draw(ColorVertex* /*DIBUJA QUAD*/ v, Primitive p, size_t vC){
-	//p_vb->SetVertexData(v, primitiveMap[p], vC);
-	//p_vb->Draw();
+	//p_vb->SetVertexData(v, vC);
+	//p_vb->Draw(Primitive::PointList);
 }
 
 void Renderer::Draw(TextureVertex*/*DIBUJA LA TEXTURA*/ v, Primitive p, size_t vC){

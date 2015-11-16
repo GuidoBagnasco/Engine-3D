@@ -34,6 +34,7 @@ void Camera::CreateProjectionMatrix(float fov, float aspect, float nearPlane, fl
 	m_nearPlane = nearPlane;
 	m_farPlane = farPlane;
 	D3DXMatrixPerspectiveFovLH(&m_projection, m_fov, m_aspect, m_nearPlane, m_farPlane);
+	r->SetMatrix(Projection, &m_projection);
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -155,6 +156,7 @@ void Camera::Update()
 
 	// Move the camera
 	m_position += m_velocity;
+
 	// Could decelerate here. I'll just stop completely.
 	m_velocity = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_lookAt = m_position + m_look;
@@ -164,7 +166,7 @@ void Camera::Update()
 	D3DXMatrixLookAtLH(&m_view, &m_position, &m_lookAt, &up);
 
 	// set the new view matrix
-	r->d3d_dev->SetTransform(D3DTS_VIEW, &m_view);
+	r->SetMatrix(View, &m_view);
 
 	// Set the camera axes from the view matrix
 	m_right.x = m_view._11;
@@ -181,6 +183,8 @@ void Camera::Update()
 	float lookLengthOnXZ = sqrtf(m_look.z * m_look.z + m_look.x * m_look.x);
 	m_pitch = atan2f(m_look.y, lookLengthOnXZ);
 	m_yaw = atan2f(m_look.x, m_look.z);
+
+	r->m_frustum->ConstructFrustum(m_farPlane, m_view, m_projection);
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

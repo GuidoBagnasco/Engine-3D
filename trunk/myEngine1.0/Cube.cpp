@@ -23,7 +23,7 @@ void Cube::Init(){/*
 		3, 2, 5, 3, 5, 4,
 		2, 1, 6, 2, 6, 5,
 		1, 7, 6, 1, 0, 7,
-		0, 3, 4, 0, 4, 7 };
+		0, 3, 4, 0, 4, 7 };*/
 
-	SetData(g_8Vertices, 8, TriangleList, g_indices, 36);*/
+	//SetData(g_8Vertices, 8, TriangleList, g_indices, 36);
 }
