@@ -72,7 +72,7 @@ void Importer::ImportAnimations(std::vector<Animation*>& list, tinyxml2::XMLElem
 }
 
 //--------------------------------------------------------------------------------//
-
+// Sprites --- Not in use
 Texture Importer::LoadTexture(std::string path, int KeyCode){
 	if (!m_mTextureMap.count(path)){
 		Texture t = m_pRenderer->LoadTexture(path, KeyCode);
@@ -112,39 +112,40 @@ bool Importer::ImportScene(const std::string& fileName, Node& SceneRoot){
 
 
 
-bool Importer::ImportNode(Node& kNode, aiNode* AiNode, const aiScene* AiScene){
-	kNode.SetName(AiNode->mName.C_Str());
+void Importer::ImportNode(Node& rNode, aiNode* aiNode, const aiScene* aiScene){
+	rNode.SetName(aiNode->mName.C_Str());
 
-	aiMatrix4x4 mx = AiNode->mTransformation.Transpose();
-	kNode.SetTransformationFromAssimp(mx.a1, mx.a2, mx.a3, mx.a4,
-										mx.b1, mx.b2, mx.b3, mx.b4,
-										mx.c1, mx.c2, mx.c3, mx.c4,
-										mx.d1, mx.d2, mx.d3, mx.d4);
+	aiMatrix4x4 mx = aiNode->mTransformation.Transpose();
+	D3DXMATRIX mxD3DX = D3DXMATRIX(mx.a1, mx.a2, mx.a3, mx.a4,
+									mx.b1, mx.b2, mx.b3, mx.b4,
+									mx.c1, mx.c2, mx.c3, mx.c4,
+									mx.d1, mx.d2, mx.d3, mx.d4);
 
-	for (unsigned int i = 0; i < AiNode->mNumChildren; i++){
+	rNode.ReceiveAssimpData(&mxD3DX);
+
+	for (unsigned int i = 0; i < aiNode->mNumChildren; i++){
 		Node* pkNode = new Node();
-		pkNode->SetName(AiNode->mChildren[i]->mName.C_Str());
+		
+		pkNode->SetName(aiNode->mChildren[i]->mName.C_Str());
 
-		ImportNode(*pkNode, AiNode->mChildren[i], AiScene);
-		kNode.AddChild(pkNode);
+		ImportNode(*pkNode, aiNode->mChildren[i], aiScene);
+		rNode.AddChild(pkNode);
 	}
 
-	for (unsigned int i = 0; i < AiNode->mNumMeshes; i++){
+	for (unsigned int i = 0; i < aiNode->mNumMeshes; i++){
 		Mesh* pkMesh = new Mesh(*m_pRenderer, true);
-		kNode.AddMesh(pkMesh);
+		rNode.AddMesh(pkMesh);
 
-		aiMesh* pkAiMesh = AiScene->mMeshes[AiNode->mMeshes[i]];
-		aiMaterial* pkAiMaterial = AiScene->mMaterials[pkAiMesh->mMaterialIndex];
+		aiMesh* pkAiMesh = aiScene->mMeshes[aiNode->mMeshes[i]];
+		aiMaterial* pkAiMaterial = aiScene->mMaterials[pkAiMesh->mMaterialIndex];
 
 		ImportMesh(pkAiMesh, pkAiMaterial, *pkMesh);
 	}
-	
-	return true;
 }
 
 
 
-bool Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial, Mesh& kMesh){
+void Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial, Mesh& kMesh){
 	kMesh.SetName(pkAiMesh->mName.C_Str());
 
 	MeshVertex* pVertices = new MeshVertex[pkAiMesh->mNumVertices];
@@ -157,20 +158,22 @@ bool Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial
 			pVertices[i].v = pkAiMesh->mTextureCoords[0][i].y;
 		}
 
-
 		if (pkAiMesh->HasNormals()){
 			pVertices[i].nx = pkAiMesh->mNormals[i].x;
 			pVertices[i].ny = pkAiMesh->mNormals[i].y;
 			pVertices[i].nz = pkAiMesh->mNormals[i].z;
 		}
 	}
+
 	size_t uiIndexCount = pkAiMesh->mNumFaces * 3;
 	unsigned short* pausIndices = new unsigned short[uiIndexCount];
+
 	for (unsigned int i = 0; i<pkAiMesh->mNumFaces; i++){
 		pausIndices[i * 3 + 0] = pkAiMesh->mFaces[i].mIndices[0];
 		pausIndices[i * 3 + 1] = pkAiMesh->mFaces[i].mIndices[1];
 		pausIndices[i * 3 + 2] = pkAiMesh->mFaces[i].mIndices[2];
 	}
+
 	kMesh.SetData(pVertices, pkAiMesh->mNumVertices, engine::Primitive::TriangleList, pausIndices, uiIndexCount);
 	kMesh.SetName(pkAiMesh->mName.C_Str());
 
@@ -184,6 +187,4 @@ bool Importer::ImportMesh(const aiMesh* pkAiMesh, const aiMaterial* pkAiMaterial
 		Texture TheTexture = GetRenderer()->LoadTexture(texPath);
 		kMesh.SetTexture(TheTexture);
 	}
-
-	return true;
 }

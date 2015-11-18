@@ -76,7 +76,7 @@ bool Renderer::Init(HWND _HwnD){
 		d3d_dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 		d3d_dev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 		d3d_dev->SetRenderState(D3DRS_ZFUNC, D3DCMP_LESSEQUAL);
-		d3d_dev->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+		d3d_dev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
 
 		
 		D3DVIEWPORT9 kViewport; //CAMARA 
@@ -232,14 +232,14 @@ void Renderer::Draw(engine::Primitive p){
 const Texture Renderer::LoadTexture(const std::string& Fname, int KeyCode){
 	IDirect3DTexture9* p_Texture = NULL;
 	HRESULT HR = D3DXCreateTextureFromFileEx(d3d_dev,
-		Fname.c_str(),
-		0, 0, 0, 0,
-		D3DFMT_UNKNOWN, D3DPOOL_MANAGED,
-		D3DX_FILTER_NONE, D3DX_FILTER_NONE,
-		KeyCode,
-		NULL,
-		NULL,
-		&p_Texture);
+											Fname.c_str(),
+											0, 0, 0, 0,
+											D3DFMT_UNKNOWN, D3DPOOL_MANAGED,
+											D3DX_FILTER_NONE, D3DX_FILTER_NONE,
+											KeyCode,
+											NULL,
+											NULL,
+											&p_Texture);
 	if (HR != D3D_OK){
 		return NoTexture;
 	}

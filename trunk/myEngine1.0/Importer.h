@@ -35,8 +35,8 @@ namespace engine{
 			~Importer();
 			bool Init(Renderer&);
 
-			bool ImportNode(Node&, aiNode*, const aiScene*);
-			bool ImportMesh(const aiMesh*, const aiMaterial*, Mesh&);
+			void ImportNode(Node&, aiNode*, const aiScene*);
+			void ImportMesh(const aiMesh*, const aiMaterial*, Mesh&);
 			bool ImportScene(const std::string&, Node&);
 
 			void ImportAnimations(std::vector<Animation*>&, tinyxml2::XMLElement*);		// Sprites --- Not in use
@@ -46,13 +46,13 @@ namespace engine{
 			}
 
 			Renderer* GetRenderer() const;
-			Texture LoadTexture(std::string path, int KeyCode);
+			Texture LoadTexture(std::string path, int KeyCode = 0);				// Sprites --- Not in use
 
 		private:
 			int ColorConverter(int);
 			std::string m_sCurrentModelPath;
 			static Importer* m_pInstance;
-				   Renderer* m_pRenderer;
-				   std::map<std::string, Texture> m_mTextureMap;
+			Renderer* m_pRenderer;
+			std::map<std::string, Texture> m_mTextureMap;
 	};
 }

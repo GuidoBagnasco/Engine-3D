@@ -27,31 +27,8 @@ Node::~Node(){
 
 
 
-void Node::SetTransformationFromAssimp(float a1, float a2, float a3, float a4,
-	float b1, float b2, float b3, float b4,
-	float c1, float c2, float c3, float c4,
-	float d1, float d2, float d3, float d4){
-
-
-	defaultMatrix._11 = a1;
-	defaultMatrix._12 = a2;
-	defaultMatrix._13 = a3;
-	defaultMatrix._14 = a4;
-
-	defaultMatrix._21 = b1;
-	defaultMatrix._22 = b2;
-	defaultMatrix._23 = b3;
-	defaultMatrix._24 = b4;
-
-	defaultMatrix._31 = c1;
-	defaultMatrix._32 = c2;
-	defaultMatrix._33 = c3;
-	defaultMatrix._34 = c4;
-
-	defaultMatrix._41 = d1;
-	defaultMatrix._42 = d2;
-	defaultMatrix._43 = d3;
-	defaultMatrix._44 = d4;
+void Node::ReceiveAssimpData(D3DXMATRIX* mx){
+	defaultMatrix = *mx;
 }
 
 

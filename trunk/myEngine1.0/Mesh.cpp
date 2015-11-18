@@ -8,8 +8,7 @@
 using namespace engine;
 
 
-Mesh::Mesh(Renderer& r, bool isTextured) :/* Entity(),*/ m_rRenderer(r), m_pVertexBuffer(NULL), m_pIndexBuffer(NULL), m_pTexture(NoTexture), m_pBB(new D3DXVECTOR3[8]){
-
+Mesh::Mesh(Renderer& r, bool isTextured) : m_rRenderer(r), m_pVertexBuffer(NULL), m_pIndexBuffer(NULL), m_pTexture(NoTexture), m_pBB(new D3DXVECTOR3[8]){
 	if(!isTextured){
 		m_pVertexBuffer = r.CreateVertexBuffer(sizeof(engine::ColorVertex), engine::ColorVertexType);
 		m_pIndexBuffer = r.CreateIndexBuffer();
