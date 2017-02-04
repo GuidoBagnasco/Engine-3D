@@ -1,0 +1,1445 @@
+﻿Build started 2016/07/11 1:37:00 p. m..
+     1>Project "C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\myEngine1.0\myEngine1.0.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\external" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D MYENGINE_EXPORTS /D _WINDLL /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt animation.cpp Bone.cpp Camera.cpp Cube.cpp Engine.cpp Entity.cpp Frustum.cpp Game.cpp Importer.cpp IndexBuffer.cpp input\DirectInput.cpp input\Input.cpp Mesh.cpp Node.cpp NodeBSP.cpp RenderTypes.cpp Scene.cpp timer\Timer.cpp TinyXML\tinyxml2.cpp VertexBuffer.cpp Window.cpp Renderer.cpp XMLParser.cpp
+         animation.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(53): warning C4251: 'engine::Importer::m_pBoneMap' : class 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Bone *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(67): warning C4251: 'engine::Importer::m_sCurrentModelPath' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(70): warning C4251: 'engine::Importer::m_mTextureMap' : class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Animation.h(28): warning C4251: 'engine::Animation::m_strName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Animation.h(29): warning C4251: 'engine::Animation::m_vecFrames' : class 'std::vector<engine::Animation::Frame *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+                 with
+                 [
+                     _Ty=engine::Animation::Frame *
+                 ]
+     1>animation.cpp(13): warning C4018: '<' : signed/unsigned mismatch
+     1>animation.cpp(63): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>animation.cpp(86): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         Bone.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+         Camera.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(19): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(20): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(21): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(22): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(28): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+         Cube.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+         Engine.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Engine.h(40): warning C4251: 'engine::Engine::_t' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Engine'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(505) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(53): warning C4251: 'engine::Importer::m_pBoneMap' : class 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Bone *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(67): warning C4251: 'engine::Importer::m_sCurrentModelPath' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(70): warning C4251: 'engine::Importer::m_mTextureMap' : class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(19): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(20): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(21): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(22): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(28): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(30): warning C4251: 'engine::Game::m_mapa' : class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(31): warning C4251: 'engine::Game::m_mIterator' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(40): warning C4251: 'engine::Game::m_vNodes' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(41): warning C4251: 'engine::Game::m_vParentNodes' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(42): warning C4251: 'engine::Game::m_vBSPNodes' : class 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::NodeBSP *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+         Entity.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+         Frustum.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(505) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+         Game.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(30): warning C4251: 'engine::Game::m_mapa' : class 'std::map<std::string,engine::Scene *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(31): warning C4251: 'engine::Game::m_mIterator' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(40): warning C4251: 'engine::Game::m_vNodes' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(41): warning C4251: 'engine::Game::m_vParentNodes' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Game.h(42): warning C4251: 'engine::Game::m_vBSPNodes' : class 'std::vector<engine::NodeBSP *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Game'
+                 with
+                 [
+                     _Ty=engine::NodeBSP *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(36): warning C4251: 'engine::Scene::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(37): warning C4251: 'engine::Scene::m_mapMesh' : class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(38): warning C4251: 'engine::Scene::m_mIteratorMesh' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(43): warning C4251: 'engine::Scene::m_pClsGroups' : class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(44): warning C4251: 'engine::Scene::m_pClsGroupsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(48): warning C4251: 'engine::Scene::m_pClsGroupsIterA' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(49): warning C4251: 'engine::Scene::m_pClsGroupsIterB' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(19): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(20): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(21): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(22): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(28): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>Game.cpp(71): warning C4018: '<' : signed/unsigned mismatch
+     1>Game.cpp(109): warning C4018: '<' : signed/unsigned mismatch
+     1>Game.cpp(116): warning C4018: '<' : signed/unsigned mismatch
+     1>Game.cpp(119): warning C4018: '<' : signed/unsigned mismatch
+         Importer.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(53): warning C4251: 'engine::Importer::m_pBoneMap' : class 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Bone *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(67): warning C4251: 'engine::Importer::m_sCurrentModelPath' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(70): warning C4251: 'engine::Importer::m_mTextureMap' : class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(36): warning C4251: 'engine::Scene::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(37): warning C4251: 'engine::Scene::m_mapMesh' : class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(38): warning C4251: 'engine::Scene::m_mIteratorMesh' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(43): warning C4251: 'engine::Scene::m_pClsGroups' : class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(44): warning C4251: 'engine::Scene::m_pClsGroupsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(48): warning C4251: 'engine::Scene::m_pClsGroupsIterA' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(49): warning C4251: 'engine::Scene::m_pClsGroupsIterB' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\animation.h(28): warning C4251: 'engine::Animation::m_strName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\animation.h(29): warning C4251: 'engine::Animation::m_vecFrames' : class 'std::vector<engine::Animation::Frame *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+                 with
+                 [
+                     _Ty=engine::Animation::Frame *
+                 ]
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>Importer.cpp(28): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>Importer.cpp(29): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>Importer.cpp(30): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>Importer.cpp(44): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(138): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(151): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(183): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(194): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(200): warning C4018: '<' : signed/unsigned mismatch
+     1>Importer.cpp(207): warning C4018: '<' : signed/unsigned mismatch
+         IndexBuffer.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+         DirectInput.cpp
+         Input.cpp
+         Mesh.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>Mesh.cpp(71): warning C4018: '<' : signed/unsigned mismatch
+     1>Mesh.cpp(109): warning C4018: '<' : signed/unsigned mismatch
+     1>Mesh.cpp(141): warning C4018: '<' : signed/unsigned mismatch
+     1>Mesh.cpp(156): warning C4018: '<' : signed/unsigned mismatch
+         Node.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(53): warning C4251: 'engine::Importer::m_pBoneMap' : class 'std::map<std::string,engine::Bone *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Bone *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(67): warning C4251: 'engine::Importer::m_sCurrentModelPath' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Importer.h(70): warning C4251: 'engine::Importer::m_mTextureMap' : class 'std::map<std::string,engine::Texture,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Importer'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\animation.h(28): warning C4251: 'engine::Animation::m_strName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\animation.h(29): warning C4251: 'engine::Animation::m_vecFrames' : class 'std::vector<engine::Animation::Frame *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Animation'
+                 with
+                 [
+                     _Ty=engine::Animation::Frame *
+                 ]
+     1>Node.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(63): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(112): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(125): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(160): warning C4018: '>' : signed/unsigned mismatch
+     1>Node.cpp(171): warning C4018: '<' : signed/unsigned mismatch
+     1>Node.cpp(223): warning C4018: '<' : signed/unsigned mismatch
+         NodeBSP.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(312) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(162) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>NodeBSP.cpp(76): warning C4018: '<' : signed/unsigned mismatch
+     1>NodeBSP.cpp(83): warning C4018: '<' : signed/unsigned mismatch
+         RenderTypes.cpp
+         Scene.cpp
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(36): warning C4251: 'engine::Scene::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(37): warning C4251: 'engine::Scene::m_mapMesh' : class 'std::map<std::string,engine::Mesh *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(38): warning C4251: 'engine::Scene::m_mIteratorMesh' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(43): warning C4251: 'engine::Scene::m_pClsGroups' : class 'std::map<std::string,engine::Scene::Mesh3DVector *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(44): warning C4251: 'engine::Scene::m_pClsGroupsIter' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(48): warning C4251: 'engine::Scene::m_pClsGroupsIterA' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Scene.h(49): warning C4251: 'engine::Scene::m_pClsGroupsIterB' : class 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>' needs to have dll-interface to be used by clients of class 'engine::Scene'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Scene::Mesh3DVector *
+                 ]
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(505) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(46): warning C4251: 'engine::Entity::m_sColGroup' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(47): warning C4251: 'engine::Entity::m_sName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'engine::Entity'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(52): warning C4251: 'engine::Entity::m_position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Entity.h(56): warning C4251: 'engine::Entity::pivot' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Entity'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(15): warning C4251: 'engine::Bone::m_Matrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Bone'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(22): warning C4251: 'engine::BoneInfo::offsetMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Bone.h(23): warning C4251: 'engine::BoneInfo::m_mWeight' : class 'std::map<unsigned int,float,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::BoneInfo'
+                 with
+                 [
+                     _Kty=unsigned int
+         ,            _Ty=float
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(65): warning C4251: 'engine::Mesh::m_vBoneData' : class 'std::vector<engine::BoneInfo *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Mesh'
+                 with
+                 [
+                     _Ty=engine::BoneInfo *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Mesh.h(41): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(20): warning C4251: 'engine::Node::m_Pos' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(21): warning C4251: 'engine::Node::m_Sc' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(24): warning C4251: 'engine::Node::m_vMeshes' : class 'std::vector<engine::Mesh *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Mesh *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(40): warning C4251: 'engine::Node::local' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(41): warning C4251: 'engine::Node::world' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(42): warning C4251: 'engine::Node::defaultMatrix' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(44): warning C4251: 'engine::Node::m_BoundMin' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(45): warning C4251: 'engine::Node::m_BoundMax' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(47): warning C4251: 'engine::Node::m_vChilds' : class 'std::vector<engine::Node *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Ty=engine::Node *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Node.h(60): warning C4251: 'engine::Node::animations' : class 'std::map<std::string,engine::Animation *,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'engine::Node'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=engine::Animation *
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(19): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(20): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(21): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(22): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(28): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+         Timer.cpp
+         tinyxml2.cpp
+         VertexBuffer.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx9math.h(472) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+         Compiling...
+         Window.cpp
+         Renderer.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50092) : see previous definition of 'DXGI_STATUS_OCCLUDED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50101) : see previous definition of 'DXGI_STATUS_CLIPPED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50110) : see previous definition of 'DXGI_STATUS_NO_REDIRECTION'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50119) : see previous definition of 'DXGI_STATUS_NO_DESKTOP_ACCESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50128) : see previous definition of 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50137) : see previous definition of 'DXGI_STATUS_MODE_CHANGED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50146) : see previous definition of 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50161) : see previous definition of 'DXGI_ERROR_INVALID_CALL'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50170) : see previous definition of 'DXGI_ERROR_NOT_FOUND'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50179) : see previous definition of 'DXGI_ERROR_MORE_DATA'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50188) : see previous definition of 'DXGI_ERROR_UNSUPPORTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50197) : see previous definition of 'DXGI_ERROR_DEVICE_REMOVED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50206) : see previous definition of 'DXGI_ERROR_DEVICE_HUNG'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50216) : see previous definition of 'DXGI_ERROR_DEVICE_RESET'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50225) : see previous definition of 'DXGI_ERROR_WAS_STILL_DRAWING'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50235) : see previous definition of 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50244) : see previous definition of 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50254) : see previous definition of 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50263) : see previous definition of 'DXGI_ERROR_NONEXCLUSIVE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50272) : see previous definition of 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50282) : see previous definition of 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50291) : see previous definition of 'DXGI_ERROR_REMOTE_OUTOFMEMORY'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50445) : see previous definition of 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND' : macro redefinition
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\winerror.h(50454) : see previous definition of 'D3D10_ERROR_FILE_NOT_FOUND'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Frustum.h(22): warning C4251: 'engine::Frustum::m_planes' : struct 'D3DXPLANE' needs to have dll-interface to be used by clients of class 'engine::Frustum'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(505) : see declaration of 'D3DXPLANE'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Renderer.h(59): warning C4251: 'engine::Renderer::m_vTexture' : class 'std::vector<engine::Texture,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'engine::Renderer'
+                 with
+                 [
+                     _Ty=engine::Texture
+                 ]
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(19): warning C4251: 'engine::Camera::m_Position' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(20): warning C4251: 'engine::Camera::m_LookAt' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(21): warning C4251: 'engine::Camera::m_Right' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(22): warning C4251: 'engine::Camera::m_Up' : struct 'D3DXVECTOR3' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(195) : see declaration of 'D3DXVECTOR3'
+     1>c:\users\guido\desktop\gráficos\graficos2\engine3d\trunk\myengine1.0\Camera.h(28): warning C4251: 'engine::Camera::m_MatView' : struct 'D3DXMATRIX' needs to have dll-interface to be used by clients of class 'engine::Camera'
+                 c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3dx10math.h(345) : see declaration of 'D3DXMATRIX'
+     1>Renderer.cpp(89): warning C4305: 'argument' : truncation from 'double' to 'FLOAT'
+     1>Renderer.cpp(119): warning C4800: 'DWORD' : forcing value to bool 'true' or 'false' (performance warning)
+     1>Renderer.cpp(203): warning C4138: '*/' found outside of comment
+         XMLParser.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Release\MyEngine1.0.res" MyEngine1.0.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.dll" /NOLOGO d3dx9.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.lib" /MACHINE:X86 /SAFESEH /DLL Release\MyEngine1.0.res
+         Release\animation.obj
+         Release\Bone.obj
+         Release\Camera.obj
+         Release\Cube.obj
+         Release\Engine.obj
+         Release\Entity.obj
+         Release\Frustum.obj
+         Release\Game.obj
+         Release\Importer.obj
+         Release\IndexBuffer.obj
+         Release\DirectInput.obj
+         Release\Input.obj
+         Release\Mesh.obj
+         Release\Node.obj
+         Release\NodeBSP.obj
+         Release\RenderTypes.obj
+         Release\Scene.obj
+         Release\Timer.obj
+         Release\tinyxml2.obj
+         Release\VertexBuffer.obj
+         Release\Window.obj
+         Release\Renderer.obj
+         Release\XMLParser.obj
+            Creating library C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.lib and object C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.exp
+         Generating code
+         Finished generating code
+         myEngine1.0.vcxproj -> C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release\MyEngine1.0.dll
+       PostBuildEvent:
+         xcopy /y "C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\external\assimp\PostBuild"  "C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\Release"
+         :VCEnd
+         C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\external\assimp\PostBuild\Assimp32d.dll
+         1 archivo(s) copiado(s)
+     1>Done Building Project "C:\Users\Guido\Desktop\Gráficos\Graficos2\Engine3D\trunk\myEngine1.0\myEngine1.0.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:28.52
